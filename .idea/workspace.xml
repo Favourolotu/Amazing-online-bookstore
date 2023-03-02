@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/project/integrationTest.java" afterDir="false" />
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Created the structure for the project i.e. the packages and the main file.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +78,16 @@
       <updated>1677302414199</updated>
       <workItem from="1677302414979" duration="270000" />
       <workItem from="1677303305801" duration="162000" />
-      <workItem from="1677770791984" duration="1994000" />
+      <workItem from="1677770791984" duration="2884000" />
     </task>
+    <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
+      <created>1677773052360</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677773052360</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the structure for the project i.e. the packages and the main file." />
   </component>
 </project>
