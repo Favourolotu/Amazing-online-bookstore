@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Created the structure for the project i.e. the packages and the main file.">
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="updated the maven.yml file to have a consistent java version with the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -78,7 +83,7 @@
       <updated>1677302414199</updated>
       <workItem from="1677302414979" duration="270000" />
       <workItem from="1677303305801" duration="162000" />
-      <workItem from="1677770791984" duration="2884000" />
+      <workItem from="1677770791984" duration="4800000" />
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -87,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677773052360</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated the maven.yml file to have a consistent java version with the project">
+      <created>1677774127170</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677774127170</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the structure for the project i.e. the packages and the main file." />
+    <MESSAGE value="updated the maven.yml file to have a consistent java version with the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the maven.yml file to have a consistent java version with the project" />
   </component>
 </project>
