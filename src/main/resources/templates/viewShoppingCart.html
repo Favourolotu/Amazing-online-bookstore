@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Books</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>List of books in shopping cart:</h1>
+
+<p th:each="book : ${books}">
+  id: <b><span th:text="${book.id}"/></b>
+  Name: <b><span th:text="${book.bookName}"/></b>
+  <br>
+<hr>
+</p>
+
+<br>
+
+<form action="#" th:action="@{/makePurchase}" method="post">
+  <p> <input type="submit" value="Make Purchase" /></p>
+</form>
+
+<form action="#" th:action="@{/browseInventory}" method="post">
+  <p> <input type="submit" value="Return to Browse" /></p>
+</form>
+
+<form action="#" th:action="@{/userDefaultPage}" method="get">
+  <p> <input type="submit" value="Return Home" /> </p>
+</form>
+
+</body>
+</html>

@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="updated the maven.yml file to have a consistent java version with the project">
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="New branch commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/controllers/ShoppingCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/models/bookStub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addedToShoppingCart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/indexStub.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +30,9 @@
       <list>
         <option value="package-info" />
         <option value="Kotlin Class" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -50,6 +65,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -61,6 +81,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "a868032709358e50c9a2bc9fd8ffe2ca",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,7 +104,8 @@
       <updated>1677302414199</updated>
       <workItem from="1677302414979" duration="270000" />
       <workItem from="1677303305801" duration="162000" />
-      <workItem from="1677770791984" duration="4800000" />
+      <workItem from="1677770791984" duration="14868000" />
+      <workItem from="1678117193691" duration="9039000" />
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -99,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677774127170</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="New branch commit">
+      <created>1677808278504</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677808278505</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
     <MESSAGE value="updated the maven.yml file to have a consistent java version with the project" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the maven.yml file to have a consistent java version with the project" />
+    <MESSAGE value="New branch commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="New branch commit" />
   </component>
 </project>

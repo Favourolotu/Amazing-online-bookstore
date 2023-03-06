@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Welcome to The Amazing Online Bookstore</h1>
+    <br>
+
+    <h3> Select the action to take of the listed below:</h3>
+
+    <form action="#" th:action="@{/searchForBook}" method="post">
+        <p>Input Book Name: <input type="text" name="bookName"/>  <input type="submit" value="Search for Book" /></p>
+    </form>
+
+    <form action="#" th:action="@{/browseInventory}" method="post">
+        <p><input type="submit" value="Browse Through Inventory" /></p>
+    </form>
+
+    <form action="#" th:action="@{/viewShoppingCart}" method="post">
+        <p><input type="submit" value="View Shopping Cart" /></p>
+    </form>
+
+    <form action="#" th:action="@{/logout}" method="post">
+        <p><input type="submit" value="Logout" /></p>
+    </form>
+
+</body>
+</html>

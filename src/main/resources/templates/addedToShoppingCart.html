@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>add to cart</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h3 th:book="${book}">
+  id: <b><span th:text="${book.id}"/></b>
+  Name: <b><span th:text="${book.bookName}"/></b>
+</h3>
+<h4 th:text="${message}">  </h4>
+
+<hr>
+
+<form action="#" th:action="@{/userDefaultPage}" method="get">
+  <p><input type="submit" value="Return to User Homepage" /></p>
+</form>
+
+<form action="#" th:action="@{/browseInventory}" method="post">
+  <p><input type="submit" value="Browse Through Inventory" /></p>
+</form>
+
+<form action="#" th:action="@{/viewShoppingCart}" method="post">
+  <p><input type="submit" value="View Shopping Cart" /></p>
+</form>
+
+
+
+</body>
+</html>
