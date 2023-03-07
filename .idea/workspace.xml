@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Created the structure for the project i.e. the packages and the main file.">
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Testing branch">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/InventoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +22,7 @@
         <option value="package-info" />
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,22 +53,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/SYSC 4806/lab6&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/janyi/Desktop/sysc 4806/Labs/Lab1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Amazing-Online-Bookstore" />
@@ -84,7 +89,7 @@
       <workItem from="1677302414979" duration="270000" />
       <workItem from="1677303305801" duration="162000" />
       <workItem from="1677770791984" duration="2884000" />
-      <workItem from="1677775657140" duration="2559000" />
+      <workItem from="1677775657140" duration="10500000" />
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -93,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677773052360</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Testing branch">
+      <created>1678138176307</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678138176307</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the structure for the project i.e. the packages and the main file." />
+    <MESSAGE value="Testing branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing branch" />
   </component>
 </project>
