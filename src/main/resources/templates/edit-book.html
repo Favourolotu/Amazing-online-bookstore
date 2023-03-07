@@ -7,8 +7,16 @@
 <body>
   <h1>Edit Book View</h1>
   <p th:text="${book.id}"></p>
-  <p th:text="${book.title}"></p>
-  <p th:text="${book.author}"></p>
+  <form th:action="@{/owner/editBook}" th:method="post">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" th:value="${book.title}" required>
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" th:value="${book.author}" required>
+
+    <input type="hidden" id="bookID" name="bookID" th:value="${book.id}" />
+    <input type="submit" value="Save Changes">
+  </form>
 
   <a href="/owner">Return to home page</a>
 </body>

@@ -6,11 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import project.models.Book;
 import project.persistence.BookRepository;
-
-import java.util.Optional;
 
 @Controller
 public class OwnerController {
@@ -25,20 +22,32 @@ public class OwnerController {
         return "owner";
     }
 
-    //TODO redirects to a page for inputting all the sections of a book
+    @GetMapping("owner/addBook")
+    public String addBook() {
+        return "add-book";
+    }
+
     @PostMapping("owner/addBook")
-    public String addBook(Model model) {
-        Book book = new Book("new_book_title", "new_book_author");
+    public String addBook(@RequestParam("title") String title, @RequestParam("author") String author) {
+        Book book = new Book(title, author);
         bookRepository.save(book);
         return "redirect:/owner";
     }
 
-    //TODO redirects to a page for editing all the sections of the selected book
-    @PostMapping("owner/editBook")
+    @GetMapping("owner/editBook")
     public String editBook(@RequestParam("bookID") Long bookID, Model model) {
         Book book = bookRepository.findById(bookID).orElseThrow(() -> new RuntimeException("Error finding book with ID: " + bookID));
         model.addAttribute("book", book);
         return "edit-book";
+    }
+
+    @PostMapping("owner/editBook")
+    public String editBook(@RequestParam("bookID") Long bookID, @RequestParam("title") String title, @RequestParam("author") String author) {
+        Book book = bookRepository.findById(bookID).orElseThrow(() -> new RuntimeException("Error finding book with ID: " + bookID));
+        book.setTitle(title);
+        book.setAuthor(author);
+        bookRepository.save(book);
+        return "redirect:/owner";
     }
 
 

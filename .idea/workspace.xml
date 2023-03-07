@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Initial commit.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/persistence/OwnerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-book.html" afterDir="false" />
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Added edit-book page and owner home page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/owner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/owner.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +98,7 @@
       <workItem from="1677303305801" duration="162000" />
       <workItem from="1677770791984" duration="2884000" />
       <workItem from="1677805418492" duration="829000" />
-      <workItem from="1678155967139" duration="6159000" />
+      <workItem from="1678155967139" duration="8278000" />
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -118,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678157095946</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added edit-book page and owner home page.">
+      <created>1678162477336</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678162477336</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +141,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+    <MESSAGE value="Added edit-book page and owner home page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added edit-book page and owner home page." />
   </component>
 </project>
