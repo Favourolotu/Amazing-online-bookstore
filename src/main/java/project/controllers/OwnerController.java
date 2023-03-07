@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import project.models.Book;
@@ -34,8 +35,8 @@ public class OwnerController {
         return "redirect:/owner";
     }
 
-    @GetMapping("owner/editBook")
-    public String editBook(@RequestParam("bookID") Long bookID, Model model) {
+    @GetMapping("owner/editBook/{bookID}")
+    public String editBook(@PathVariable("bookID") Long bookID, Model model) {
         Book book = bookRepository.findById(bookID).orElseThrow(() -> new RuntimeException("Error finding book with ID: " + bookID));
         model.addAttribute("book", book);
         return "edit-book";
@@ -49,9 +50,5 @@ public class OwnerController {
         bookRepository.save(book);
         return "redirect:/owner";
     }
-
-
-
-
 
 }

@@ -19,7 +19,7 @@
             <td th:text="${book.title}"></td>
             <td th:text="${book.author}"></td>
             <td>
-                <form th:action="@{/owner/editBook}" th:method="GET">
+                <form th:action="@{/owner/editBook/{bookID}(bookID=${book.id})}" th:method="GET">
                     <input type="hidden" name="bookID" th:value="${book.id}" />
                     <input type="submit" value="Edit Book">
                 </form>
