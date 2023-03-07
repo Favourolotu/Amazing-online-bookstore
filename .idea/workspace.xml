@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="New branch commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/controllers/ShoppingCartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/models/bookStub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addedToShoppingCart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/indexStub.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" afterDir="false" />
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Book and Inventory as well as their repositories done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Inventory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +19,8 @@
       <list>
         <option value="package-info" />
         <option value="Kotlin Class" />
-        <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -65,15 +53,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/SYSC 4806/lab6",
+    "last_opened_file_path": "C:/Users/janyi/Desktop/sysc 4806/Labs/Lab1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,7 +64,6 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "a868032709358e50c9a2bc9fd8ffe2ca",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -104,8 +86,8 @@
       <updated>1677302414199</updated>
       <workItem from="1677302414979" duration="270000" />
       <workItem from="1677303305801" duration="162000" />
-      <workItem from="1677770791984" duration="14868000" />
-      <workItem from="1678117193691" duration="9039000" />
+      <workItem from="1677770791984" duration="2884000" />
+      <workItem from="1677775657140" duration="11505000" />
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -114,19 +96,19 @@
       <option name="project" value="LOCAL" />
       <updated>1677773052360</updated>
     </task>
-    <task id="LOCAL-00002" summary="updated the maven.yml file to have a consistent java version with the project">
-      <created>1677774127170</created>
+    <task id="LOCAL-00002" summary="Testing branch">
+      <created>1678138176307</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1677774127170</updated>
+      <updated>1678138176307</updated>
     </task>
-    <task id="LOCAL-00003" summary="New branch commit">
-      <created>1677808278504</created>
+    <task id="LOCAL-00003" summary="Book and Inventory as well as their repositories done">
+      <created>1678211407169</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1677808278505</updated>
+      <updated>1678211407169</updated>
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
@@ -147,8 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
-    <MESSAGE value="updated the maven.yml file to have a consistent java version with the project" />
-    <MESSAGE value="New branch commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="New branch commit" />
+    <MESSAGE value="Testing branch" />
+    <MESSAGE value="Book and Inventory as well as their repositories done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Book and Inventory as well as their repositories done" />
   </component>
 </project>
