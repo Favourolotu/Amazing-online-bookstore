@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Book and Inventory as well as their repositories done">
+=======
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="- Added the views for the user interaction with the system.&#10;- Added the controller endpoints for the user&#10;- Added the model and controller endpoint for the shopping cart.">
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Inventory.java" afterDir="false" />
@@ -86,8 +90,13 @@
       <updated>1677302414199</updated>
       <workItem from="1677302414979" duration="270000" />
       <workItem from="1677303305801" duration="162000" />
+<<<<<<< Updated upstream
       <workItem from="1677770791984" duration="2884000" />
       <workItem from="1677775657140" duration="11505000" />
+=======
+      <workItem from="1677770791984" duration="14868000" />
+      <workItem from="1678117193691" duration="12132000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -110,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678211407169</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- Added the views for the user interaction with the system.&#10;- Added the controller endpoints for the user&#10;- Added the model and controller endpoint for the shopping cart.">
+      <created>1678140690290</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678140690290</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,8 +145,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
+<<<<<<< Updated upstream
     <MESSAGE value="Testing branch" />
     <MESSAGE value="Book and Inventory as well as their repositories done" />
     <option name="LAST_COMMIT_MESSAGE" value="Book and Inventory as well as their repositories done" />
+=======
+    <MESSAGE value="updated the maven.yml file to have a consistent java version with the project" />
+    <MESSAGE value="New branch commit" />
+    <MESSAGE value="- Added the views for the user interaction with the system.&#10;- Added the controller endpoints for the user&#10;- Added the model and controller endpoint for the shopping cart." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added the views for the user interaction with the system.&#10;- Added the controller endpoints for the user&#10;- Added the model and controller endpoint for the shopping cart." />
+>>>>>>> Stashed changes
   </component>
 </project>
