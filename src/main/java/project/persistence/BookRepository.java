@@ -1,7 +1,6 @@
-package project;
+package project.persistence;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
+import project.models.Book;
 
 public interface BookRepository extends CrudRepository<Book, Long>{
 

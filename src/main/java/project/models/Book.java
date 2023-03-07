@@ -1,11 +1,11 @@
-package project;
+package project.models;
 import java.util.*;
 import jakarta.persistence.*;
 
 @Entity
 public class Book {
     @Id
-    private Long isbn;
+    private Long ISBN;
     private String name;
     private String author;
     private String description;
@@ -16,10 +16,10 @@ public class Book {
     }
 
     public Long getIsbn() {
-        return isbn;
+        return ISBN;
     }
     public void setIsbn(Long isbn){
-        this.isbn = isbn;
+        this.ISBN = isbn;
     }
 
 
@@ -60,6 +60,6 @@ public class Book {
     public String toString() {
         return String.format(
                 "Book[isbn=%d, name='%s', author='%s']",
-                isbn, name, author);
+                ISBN, name, author);
     }
 }
