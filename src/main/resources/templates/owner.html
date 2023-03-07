@@ -7,5 +7,25 @@
 <body>
     <h1>Owner Page View</h1>
 
+    <table>
+        <caption>Inventory</caption>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td>
+                <form th:action="@{/owner/editBook}" th:method="post">
+                    <input type="hidden" name="bookID" th:value="${book.id}" />
+                    <input type="submit" value="Edit Book">
+                </form>
+            </td>
+
+        </tr>
+    </table>
+
+    <form th:action="@{/owner/addBook}" th:method="post">
+        <input type="submit" value="Add Book">
+    </form>
+
 </body>
 </html>

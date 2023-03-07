@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Created the structure for the project i.e. the packages and the main file.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/model/Owner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/repositories/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/owner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Initial commit.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/persistence/OwnerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/owner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/owner.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +25,9 @@
       <list>
         <option value="package-info" />
         <option value="Kotlin Class" />
-        <option value="HTML File" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -101,7 +102,7 @@
       <workItem from="1677303305801" duration="162000" />
       <workItem from="1677770791984" duration="2884000" />
       <workItem from="1677805418492" duration="829000" />
-      <workItem from="1678155967139" duration="1094000" />
+      <workItem from="1678155967139" duration="6159000" />
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -110,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677773052360</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit.">
+      <created>1678157095946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678157095946</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the structure for the project i.e. the packages and the main file." />
+    <MESSAGE value="Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
   </component>
 </project>
