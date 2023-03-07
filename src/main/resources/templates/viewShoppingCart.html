@@ -1,19 +1,39 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Books</title>
+  <title>Amazing Bookstore</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 
-<h1>List of books in shopping cart:</h1>
+<table>
+  <caption>List of books in shopping cart: </caption>
 
-<p th:each="book : ${books}">
-  id: <b><span th:text="${book.id}"/></b>
-  Name: <b><span th:text="${book.bookName}"/></b>
-  <br>
-<hr>
-</p>
+  <tr>
+    <th> ISBN </th>
+    <th> Name </th>
+    <th> Author </th>
+    <th> Description </th>
+    <th> Publisher </th>
+  </tr>
+
+  <tr th:each="book : ${books}">
+    <td th:text="${book.isbn}"></td>
+    <td th:text="${book.name}"></td>
+    <td th:text="${book.author}"></td>
+    <td th:text="${book.description}"></td>
+    <td th:text="${book.publisher}"></td>
+
+    <td>
+      <form th:action="@{/removeFromShoppingCart/{bookID}(bookID=${book.isbn})}" th:method="post">
+        <input type="hidden" name="bookID" th:value="${book.isbn}" />
+        <input type="submit" value="remove from Cart">
+      </form>
+    </td>
+
+  </tr>
+
+</table>
 
 <br>
 
@@ -21,9 +41,6 @@
   <p> <input type="submit" value="Make Purchase" /></p>
 </form>
 
-<form action="#" th:action="@{/browseInventory}" method="post">
-  <p> <input type="submit" value="Return to Browse" /></p>
-</form>
 
 <form action="#" th:action="@{/userDefaultPage}" method="get">
   <p> <input type="submit" value="Return Home" /> </p>
