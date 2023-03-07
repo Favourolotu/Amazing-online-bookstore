@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Created the structure for the project i.e. the packages and the main file.">
+    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Book and Inventory as well as their repositories done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Inventory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +20,16 @@
         <option value="package-info" />
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -48,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/SYSC 4806/lab6",
+    "last_opened_file_path": "C:/Users/janyi/Desktop/sysc 4806/Labs/Lab1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,6 +87,7 @@
       <workItem from="1677302414979" duration="270000" />
       <workItem from="1677303305801" duration="162000" />
       <workItem from="1677770791984" duration="2884000" />
+      <workItem from="1677775657140" duration="11505000" />
     </task>
     <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
       <created>1677773052360</created>
@@ -87,7 +96,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677773052360</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Testing branch">
+      <created>1678138176307</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678138176307</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Book and Inventory as well as their repositories done">
+      <created>1678211407169</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678211407169</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the structure for the project i.e. the packages and the main file." />
+    <MESSAGE value="Testing branch" />
+    <MESSAGE value="Book and Inventory as well as their repositories done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Book and Inventory as well as their repositories done" />
   </component>
 </project>
