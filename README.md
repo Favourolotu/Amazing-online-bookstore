@@ -1,7 +1,6 @@
 # SYSC4806 Project - Amazin Online Bookstore
 The application allows bookstore owners to upload and edit book information, such as ISBN, picture, description, author, publisher, and inventory. Users can search for books in the bookstore, browse through them, and sort/filter based on the above information. They can also put the selected books in their shopping cart and proceed to checkout.
 
-<img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Under_construction.svg">
 
 
 ## Technologies Used
