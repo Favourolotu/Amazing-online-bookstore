@@ -1,5 +1,6 @@
 package project.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,14 +8,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import project.models.Book;
-import project.models.bookStub;
+import project.models.Inventory;
+import project.models.ShoppingCart;
+import project.persistence.BookRepository;
+import project.persistence.InventoryRepository;
+import project.persistence.ShoppingCartRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class UserController {
-    private List books = getSampleBooks();
+
+
+    @Autowired
+    private ShoppingCartRepository shoppingCartRepository;
+
+    @Autowired
+    private BookRepository bookRepository;
+    @Autowired
+    private InventoryRepository inventoryRepository;
+
+
 
     /**
      * This method handles the response to the user default page endpoint
@@ -23,8 +39,8 @@ public class UserController {
      */
     @GetMapping("/userDefaultPage")
     public String defaultDisplay(Model model) {
-        // TODO get all the available inventory
-        model.addAttribute("books", getSampleBooks());
+        List<Book> books = (List<Book>) bookRepository.findAll();
+        model.addAttribute("books", books);
         return "userDefaultPage";
     }
 
@@ -46,12 +62,7 @@ public class UserController {
      */
     @PostMapping("/searchForBook")
     public String searchForBooks(@RequestParam("bookName") String bookName, Model model) {
-        // TODO Search for books by name in the inventory repository and display results
-
-        List<Book> books = getSampleBooks();
-        Book edit = books.get(1);
-        edit.setName(bookName);
-        books.add(edit);
+        List<Book> books = bookRepository.findByName(bookName);
         model.addAttribute("books", books);
         return "listOfBooksDisplay";
     }
@@ -65,7 +76,7 @@ public class UserController {
     public String viewShoppingCart( Model model) {
         // TODO get list of all books in the users shopping cart and display
 
-        model.addAttribute("books", books);
+        //model.addAttribute("books", );
         return "viewShoppingCart";
     }
 
@@ -76,15 +87,15 @@ public class UserController {
      */
     @PostMapping("/addToShoppingCart/{bookID}")
     public String addToShoppingCart(@PathVariable Long bookID) {
-        // TODO get specific book with id input by user into shopping cart
+        // get specific book with id input by user into shopping cart
+        Optional<Book> bookToAdd = bookRepository.findById(bookID);
+        if (shoppingCartRepository.findById(1L) == null){
+            shoppingCartRepository.save(new ShoppingCart());
+        }
+        //ShoppingCart shoppingCart = shoppingCartRepository.findById(1L) ;
+        //shoppingCart.addBook();
 
-        Book sample4 = new Book();
-        sample4.setIsbn(bookID);
-        sample4.setName("Xiv");
-        sample4.setAuthor("test");
-        sample4.setDescription("A book written by test");
-        sample4.setPublisher("SYSC 4806");
-        books.add(sample4);
+
         return "redirect:/viewShoppingCart";
     }
 
@@ -96,37 +107,17 @@ public class UserController {
     @PostMapping("/removeFromShoppingCart/{bookID}")
     public String removeFromShoppingCart(@PathVariable Long bookID) {
         // TODO remove specific book with id input by user into shopping cart
-        books.remove((int)(long)bookID - 1);
         return "redirect:/viewShoppingCart";
     }
 
-    private List<Book> getSampleBooks(){
-        List<Book> bookList = new ArrayList<Book>();
+    @PostMapping("/makePurchase")
+    public String makePurchase( Model model) {
+        // TODO get books in shopping cart and add them to the user purchase list
+        // TODO display the books purchased by the user
 
-        Book sample1 = new Book();
-        sample1.setIsbn(1L);
-        sample1.setName("Xi");
-        sample1.setAuthor("Chase");
-        sample1.setDescription("A book written by chase");
-        sample1.setPublisher("SYSC 4806");
+        // List of all purchases
 
-        Book sample2 = new Book();
-        sample2.setIsbn(2L);
-        sample2.setName("Xii");
-        sample2.setAuthor("Favour");
-        sample2.setDescription("A book written by Favour");
-        sample2.setPublisher("SYSC 4806");
-
-        Book sample3 = new Book();
-        sample3.setIsbn(3L);
-        sample3.setName("Xiii");
-        sample3.setAuthor("Joseph");
-        sample3.setDescription("A book written by Joseph");
-        sample3.setPublisher("SYSC 4806");
-
-        bookList.add(sample1);
-        bookList.add(sample2);
-        bookList.add(sample3);
-        return bookList;
+        //model.addAttribute("books", bookList);
+        return "userPurchases";
     }
 }

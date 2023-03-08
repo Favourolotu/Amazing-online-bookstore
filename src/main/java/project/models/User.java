@@ -14,17 +14,13 @@ public class User {
 
     private String userName;
 
-    //@OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
-    //private ShoppingCart shoppingCart;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private ShoppingCart shoppingCart;
 
     // @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     //private List<Book> purchasedBooks;
-    public User() {}
-    public User(Long id, String userName){
-        this.id = id;
-        this.userName = userName;
-        //this.shoppingCart = new ShoppingCart();
-        // this.purchasedBooks = new ArrayList<Book>();
+    public User() {
+        this.shoppingCart = new ShoppingCart();
     }
 
     public String getUserName(){
@@ -43,7 +39,7 @@ public class User {
         this.id = id;
     }
 
-    /*
+
     public ShoppingCart getShoppingCart(){
         return shoppingCart;
     }
@@ -52,7 +48,7 @@ public class User {
         this.shoppingCart = new ShoppingCart();
     }
 
-
+/*
     public List<Book> getPurchasedBooks(){
         return this.purchasedBooks;
     }

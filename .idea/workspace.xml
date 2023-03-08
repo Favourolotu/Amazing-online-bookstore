@@ -4,21 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="- Added the views for the user interaction with the system.&#10;- Added the controller endpoints for the user&#10;- Added the model and controller endpoint for the shopping cart.">
+    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/controllers/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/ShoppingCartController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addedToShoppingCart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/indexStub.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/indexStub.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/bookStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />

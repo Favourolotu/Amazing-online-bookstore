@@ -1,10 +1,9 @@
 package project.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 @Entity
 public class ShoppingCart {
 
@@ -12,8 +11,12 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    // @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
-    //private List<Book> bookList;
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
+    private List<Book> bookList;
+
+    public ShoppingCart(){
+        bookList = new ArrayList<>();
+    }
     public Long getId() {
         return id;
     }
@@ -22,16 +25,18 @@ public class ShoppingCart {
         this.id = id;
     }
 
-        /*
+
     public List<Book> getBookList(){
         return this.bookList;
     }
 
-
+    public void addBook (Book book){
+        this.bookList.add(book);
+    }
 
     public void setBookList(Book book){
         this.bookList.add(book);
     }
 
-     */
+
 }
