@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="Updated file structure">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML Diagram.drawio.png" afterDir="false" />
+    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/controllers/LoginPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LoginPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/controllers/OwnerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/indexStub.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/owner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/owner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/OwnerControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/controllers/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/controllers/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/integrationTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,129 +32,100 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2MDW0aHoIKO7VfBVALrCbzRStQC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/janyi/Desktop/sysc 4806/Labs/Lab1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="project.controllers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BookstoreApplication">
+    <configuration name="UserControllerTest.addNewBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Amazing-Online-Bookstore" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="project.BookstoreApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="addNewBookTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserControllerTest.defaultDisplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="defaultDisplayTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.displayAddBookPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="displayAddBookPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="project.BookstoreApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BookstoreApplication" />
+        <item itemvalue="JUnit.UserControllerTest.addNewBookTest" />
+        <item itemvalue="JUnit.UserControllerTest.displayAddBookPageTest" />
+        <item itemvalue="JUnit.UserControllerTest.defaultDisplayTest" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="d61450c9-651f-4e73-b2bc-1a5d87ae5d51" name="Changes" comment="" />
-      <created>1677302414199</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1677302414199</updated>
-      <workItem from="1677302414979" duration="270000" />
-      <workItem from="1677303305801" duration="162000" />
-      <workItem from="1677770791984" duration="2884000" />
-      <workItem from="1677775657140" duration="16038000" />
-    </task>
-    <task id="LOCAL-00001" summary="Created the structure for the project i.e. the packages and the main file.">
-      <created>1677773052360</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1677773052360</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Testing branch">
-      <created>1678138176307</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1678138176307</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Book and Inventory as well as their repositories done">
-      <created>1678211407169</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1678211407169</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Updated file structure">
-      <created>1678212386609</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1678212386609</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created the structure for the project i.e. the packages and the main file." />
-    <MESSAGE value="Testing branch" />
-    <MESSAGE value="Book and Inventory as well as their repositories done" />
-    <MESSAGE value="Updated file structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated file structure" />
   </component>
 </project>
