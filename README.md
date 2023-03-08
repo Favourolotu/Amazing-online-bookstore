@@ -6,7 +6,7 @@ The application allows bookstore owners to upload and edit book information, suc
 - Thymeleaf template engine
 - H2 database
 
-# How to Run
+#* How to Run
 1. Clone the Repo using any Java IDE
 2. Navigate to BookstoreApplication.java and click run
 3. Once Spring has intiialized, type in localhost:8080 into a browser
