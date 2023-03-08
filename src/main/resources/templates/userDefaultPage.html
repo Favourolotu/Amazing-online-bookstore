@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Amazing Bookstore</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Welcome to The Amazing Online Bookstore</h1>
+    <br>
+
+    <div th:each="inventory : ${inventories}">
+    <table>
+        <caption th:inline="text">Inventory [[${inventory.id}]]</caption>
+
+        <tr>
+            <th> ISBN </th>
+            <th> Title </th>
+            <th> Author </th>
+            <th> Description </th>
+            <th> Publisher </th>
+        </tr>
+
+        <tr th:each="book : ${inventory.books}">
+            <td th:text="${book.ISBN}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.description}"></td>
+            <td th:text="${book.publisher}"></td>
+
+            <td>
+                <form th:action="@{/addToShoppingCart/{bookID}(bookID=${book.ISBN})}" th:method="post">
+                    <input type="hidden" name="bookID" th:value="${book.ISBN}" />
+                    <input type="submit" value="Add to Cart">
+                </form>
+            </td>
+
+        </tr>
+    </table>
+    </div>
+
+    <h4> Select the action to take of the listed below:</h4>
+
+    <form action="#" th:action="@{/searchForBook}" method="post">
+        <p>Input Book Name: <input type="text" name="bookName"/>  <input type="submit" value="Search for Book" /></p>
+    </form>
+
+    <form action="#" th:action="@{/viewShoppingCart}" method="get">
+        <p><input type="submit" value="View Shopping Cart" /></p>
+    </form>
+
+    <form action="#" th:action="@{/logout}" method="post">
+        <p><input type="submit" value="Logout" /></p>
+    </form>
+
+</body>
+</html>
