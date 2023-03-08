@@ -1,7 +1,8 @@
 package project.persistence;
-import org.springframework.data.repository.CrudRepository;
+
 import project.models.Book;
+import org.springframework.data.repository.CrudRepository;
 
-public interface BookRepository extends CrudRepository<Book, Long>{
-
+public interface BookRepository extends CrudRepository<Book, Long> {
 }
+

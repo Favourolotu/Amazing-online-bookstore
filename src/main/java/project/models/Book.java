@@ -1,36 +1,43 @@
 package project.models;
-import java.util.*;
+
 import jakarta.persistence.*;
 
 @Entity
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long ISBN;
-    private String name;
+    private String title;
     private String author;
     private String description;
     private String publisher;
 
-    public Book(){
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Inventory inventory;
 
+    public Book(){}
+
+    public Book(String title, String author, String description, String publisher) {
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.publisher = publisher;
     }
 
-    public Long getIsbn() {
+    public Long getISBN() {
         return ISBN;
     }
-    public void setIsbn(Long isbn){
+    public void setISBN(Long isbn){
         this.ISBN = isbn;
     }
 
-
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
-
 
     public String getAuthor() {
         return author;
@@ -56,10 +63,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Book[isbn=%d, name='%s', author='%s']",
-                ISBN, name, author);
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 }
