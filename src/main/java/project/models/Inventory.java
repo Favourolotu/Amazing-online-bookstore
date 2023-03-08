@@ -1,7 +1,6 @@
 package project.models;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -32,3 +31,4 @@ public class Inventory {
         this.books = books;
     }
 }
+
