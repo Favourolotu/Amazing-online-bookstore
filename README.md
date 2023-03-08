@@ -1,4 +1,4 @@
-# SYSC4806 Project - Amazing Online Bookstore ![example workflow](https://github.com/Favourolotu/Amazing-online-bookstore/workflows/maven.yml/badge.svg)
+# SYSC4806 Project - Amazing Online Bookstore ![example workflow](https://github.com/Favourolotu/Amazing-online-bookstore/actions/workflows/maven.yml/badge.svg)
 The application allows bookstore owners to upload and edit book information, such as ISBN, picture, description, author, publisher, and inventory. Users can search for books in the bookstore, browse through them, and sort/filter based on the above information. They can also put the selected books in their shopping cart and proceed to checkout.
 
 
