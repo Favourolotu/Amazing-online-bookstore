@@ -15,7 +15,14 @@ The application allows bookstore owners to upload and edit book information, suc
 4. Once Spring has intiialized, type in "localhost:8080/startPage" into a browser
 5. From here, you can access the web application
 
+## Future Improvments
+- Adding a repository for keeping track of the books puchased by a user (Currently just displaying books purchased)
+- Linking the shopping cart to the current user
+- Adding Css styling to the views
+- Unifying the naming conventions of the html templates
+
 ## This project was worked on by:
 - Chase Scott
 - Favour Olutu
 - Joseph Anyia
+
