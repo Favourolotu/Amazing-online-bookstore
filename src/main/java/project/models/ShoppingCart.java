@@ -38,5 +38,13 @@ public class ShoppingCart {
         this.bookList.add(book);
     }
 
+    public void removeBook (Book book){
+        this.bookList.remove(book);
+    }
+
+    public void clear(){
+        this.bookList = new ArrayList<Book>();
+    }
+
 
 }

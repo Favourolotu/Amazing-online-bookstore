@@ -14,9 +14,7 @@ import project.persistence.BookRepository;
 import project.persistence.InventoryRepository;
 import project.persistence.ShoppingCartRepository;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class UserController {
@@ -39,8 +37,10 @@ public class UserController {
      */
     @GetMapping("/userDefaultPage")
     public String defaultDisplay(Model model) {
-        List<Book> books = (List<Book>) bookRepository.findAll();
-        model.addAttribute("books", books);
+        Iterable<Inventory> inventories = inventoryRepository.findAll();
+        // One shopping cart per user
+        shoppingCartRepository.save(new ShoppingCart());
+        model.addAttribute("inventories", inventories);
         return "userDefaultPage";
     }
 
@@ -51,7 +51,7 @@ public class UserController {
      */
     @PostMapping("/logout")
     public String logoutUser(Model model) {
-        return "indexStub";
+        return "LoginPage";
     }
 
     /**
@@ -62,7 +62,7 @@ public class UserController {
      */
     @PostMapping("/searchForBook")
     public String searchForBooks(@RequestParam("bookName") String bookName, Model model) {
-        List<Book> books = bookRepository.findByName(bookName);
+        List<Book> books = bookRepository.findByTitle(bookName);
         model.addAttribute("books", books);
         return "listOfBooksDisplay";
     }
@@ -74,50 +74,55 @@ public class UserController {
      */
     @GetMapping("/viewShoppingCart")
     public String viewShoppingCart( Model model) {
-        // TODO get list of all books in the users shopping cart and display
 
-        //model.addAttribute("books", );
+        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L) ;
+        model.addAttribute("books", shoppingCart.getBookList());
         return "viewShoppingCart";
     }
 
     /**
      * This method handles a user request to add a book to the shopping cart
-     * @param bookID
+     * @param ISBN
      * @return Returns the shopping cart view with the new book added to it
      */
-    @PostMapping("/addToShoppingCart/{bookID}")
-    public String addToShoppingCart(@PathVariable Long bookID) {
+    @PostMapping("/addToShoppingCart/{ISBN}")
+    public String addToShoppingCart(@PathVariable Long ISBN) {
         // get specific book with id input by user into shopping cart
-        Optional<Book> bookToAdd = bookRepository.findById(bookID);
-        if (shoppingCartRepository.findById(1L) == null){
-            shoppingCartRepository.save(new ShoppingCart());
-        }
-        //ShoppingCart shoppingCart = shoppingCartRepository.findById(1L) ;
-        //shoppingCart.addBook();
+        Book book = bookRepository.findByISBN(ISBN);
 
+        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
+        shoppingCart.addBook(book);
+        shoppingCartRepository.save(shoppingCart);
 
         return "redirect:/viewShoppingCart";
     }
 
     /**
      * This method handles the user request to remove a book from the shopping cart
-     * @param bookID
+     * @param ISBN
      * @return The view of the shopping cart with the book removed
      */
-    @PostMapping("/removeFromShoppingCart/{bookID}")
-    public String removeFromShoppingCart(@PathVariable Long bookID) {
-        // TODO remove specific book with id input by user into shopping cart
+    @PostMapping("/removeFromShoppingCart/{ISBN}")
+    public String removeFromShoppingCart(@PathVariable Long ISBN) {
+        Book book = bookRepository.findByISBN(ISBN);
+
+        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
+        shoppingCart.removeBook(book);
+        shoppingCartRepository.save(shoppingCart);
+
         return "redirect:/viewShoppingCart";
     }
 
     @PostMapping("/makePurchase")
     public String makePurchase( Model model) {
         // TODO get books in shopping cart and add them to the user purchase list
-        // TODO display the books purchased by the user
 
-        // List of all purchases
+        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
+        List<Book> bookList = shoppingCart.getBookList();
+        shoppingCart.clear();
+        shoppingCartRepository.save(shoppingCart);
 
-        //model.addAttribute("books", bookList);
+        model.addAttribute("books", bookList);
         return "userPurchases";
     }
 }

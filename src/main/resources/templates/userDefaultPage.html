@@ -8,33 +8,35 @@
     <h1>Welcome to The Amazing Online Bookstore</h1>
     <br>
 
+    <div th:each="inventory : ${inventories}">
     <table>
-        <caption>Store's Inventory </caption>
+        <caption th:inline="text">Inventory [[${inventory.id}]]</caption>
 
         <tr>
             <th> ISBN </th>
-            <th> Name </th>
+            <th> Title </th>
             <th> Author </th>
             <th> Description </th>
             <th> Publisher </th>
         </tr>
 
-        <tr th:each="book : ${books}">
-            <td th:text="${book.isbn}"></td>
-            <td th:text="${book.name}"></td>
+        <tr th:each="book : ${inventory.books}">
+            <td th:text="${book.ISBN}"></td>
+            <td th:text="${book.title}"></td>
             <td th:text="${book.author}"></td>
             <td th:text="${book.description}"></td>
             <td th:text="${book.publisher}"></td>
 
             <td>
-                <form th:action="@{/addToShoppingCart/{bookID}(bookID=${book.isbn})}" th:method="post">
-                    <input type="hidden" name="bookID" th:value="${book.isbn}" />
+                <form th:action="@{/addToShoppingCart/{bookID}(bookID=${book.ISBN})}" th:method="post">
+                    <input type="hidden" name="bookID" th:value="${book.ISBN}" />
                     <input type="submit" value="Add to Cart">
                 </form>
             </td>
 
         </tr>
     </table>
+    </div>
 
     <h4> Select the action to take of the listed below:</h4>
 

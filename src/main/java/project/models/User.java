@@ -17,8 +17,8 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private ShoppingCart shoppingCart;
 
-    // @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
-    //private List<Book> purchasedBooks;
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
+    private List<Book> purchasedBooks;
     public User() {
         this.shoppingCart = new ShoppingCart();
     }
@@ -48,7 +48,7 @@ public class User {
         this.shoppingCart = new ShoppingCart();
     }
 
-/*
+
     public List<Book> getPurchasedBooks(){
         return this.purchasedBooks;
     }
@@ -59,5 +59,4 @@ public class User {
         this.purchasedBooks.add(book);
     }
 
-     */
 }

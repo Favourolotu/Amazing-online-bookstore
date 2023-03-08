@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/project/controllers/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/controllers/LoginPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LoginPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/controllers/OwnerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/ShoppingCartController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/bookStub.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/indexStub.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listOfBooksDisplay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/owner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/owner.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userDefaultPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userPurchases.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewShoppingCart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/OwnerControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/controllers/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/controllers/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/integrationTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +40,69 @@
     <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="project.controllers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BookstoreApplication">
+    <configuration name="UserControllerTest.addNewBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="addNewBookTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.defaultDisplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="defaultDisplayTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.displayAddBookPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="displayAddBookPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Amazing-Online-Bookstore" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="project.BookstoreApplication" />
@@ -60,6 +119,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BookstoreApplication" />
+        <item itemvalue="JUnit.UserControllerTest.addNewBookTest" />
+        <item itemvalue="JUnit.UserControllerTest.displayAddBookPageTest" />
+        <item itemvalue="JUnit.UserControllerTest.defaultDisplayTest" />
       </list>
     </recent_temporary>
   </component>
