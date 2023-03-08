@@ -5,7 +5,7 @@ The application allows bookstore owners to upload and edit book information, suc
 ![alt text](https://github.com/favourolotu/amazing-online-bookstore/blob/master/ObjectRelationalMapping.png?raw=true)
 
 ## Class Diagram
-![alt text](https://github.com/favourolotu/amazing-online-bookstore/blob/master/UML Diagram.drawio.png?raw=true)
+![alt text](https://github.com/favourolotu/amazing-online-bookstore/blob/master/class_diagram.png?raw=true)
 
 
 ## Technologies Used
