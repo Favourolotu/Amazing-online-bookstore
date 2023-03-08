@@ -6,18 +6,26 @@
 </head>
 <body>
   <h1>Edit Book View</h1>
-  <p th:text="${book.id}"></p>
-  <form th:action="@{/owner/editBook}" th:method="post">
+  <p th:text="${book.ISBN}"></p>
+
+  <form th:action="@{/owner/edit}" th:object="${book}" th:method="POST">
+    <input type="hidden" id="bookISBN" name="bookISBN" th:value="${book.ISBN}" />
+
     <label for="title">Title:</label>
-    <input type="text" id="title" name="title" th:value="${book.title}" required>
+    <input type="text" id="title" name="title" th:value="*{title}" required>
 
     <label for="author">Author:</label>
-    <input type="text" id="author" name="author" th:value="${book.author}" required>
+    <input type="text" id="author" name="author" th:value="*{author}" required>
 
-    <input type="hidden" id="bookID" name="bookID" th:value="${book.id}" />
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" th:value="*{description}" required>
+
+    <label for="publisher">Publisher:</label>
+    <input type="text" id="publisher" name="publisher" th:value="*{publisher}" required>
+
     <input type="submit" value="Save Changes">
   </form>
 
-  <a href="/owner">Return to home page</a>
+  <a th:href="@{/owner}">Return to home page</a>
 </body>
 </html>

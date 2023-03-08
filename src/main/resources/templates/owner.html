@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Amazin Bookstore</title>
+  <meta charset="UTF-8">
+  <title>Amazin Bookstore</title>
 </head>
 <body>
-    <h1>Owner Page View</h1>
+<h1>Owner Page View</h1>
 
-    <table>
-        <caption>Inventory</caption>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Author</th>
-        </tr>
-        <tr th:each="book : ${books}">
-            <td th:text="${book.id}"></td>
-            <td th:text="${book.title}"></td>
-            <td th:text="${book.author}"></td>
-            <td>
-                <form th:action="@{/owner/editBook/{bookID}(bookID=${book.id})}" th:method="GET">
-                    <input type="hidden" name="bookID" th:value="${book.id}" />
-                    <input type="submit" value="Edit Book">
-                </form>
-            </td>
+<div th:each="inventory : ${inventories}">
+  <table>
+    <caption th:inline="text">Inventory [[${inventory.id}]]</caption>
+    <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Description</th>
+      <th>Publisher</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${inventory.books}">
+      <td th:text="${book.ISBN}"></td>
+      <td th:text="${book.title}"></td>
+      <td th:text="${book.author}"></td>
+      <td th:text="${book.description}"></td>
+      <td th:text="${book.publisher}"></td>
+      <td>
+        <a th:href="@{/owner/edit(bookISBN=${book.ISBN})}">Edit Book</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
-        </tr>
-    </table>
+  <a th:href="@{/owner/add(inventoryId=${inventory.id})}">Add New Book</a>
 
-    <form th:action="@{/owner/addBook}" th:method="GET">
-        <input type="submit" value="Add Book">
-    </form>
+  <hr>
+</div>
 
 </body>
 </html>
