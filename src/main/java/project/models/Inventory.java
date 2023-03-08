@@ -1,18 +1,18 @@
 package project.models;
-import java.util.*;
+
 import jakarta.persistence.*;
-import project.models.Book;
+import java.util.List;
 
 @Entity
 public class Inventory {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToMany(mappedBy = "inventory", fetch = FetchType.LAZY)
     private List<Book> books;
 
     public Inventory(){
-        this.books = new LinkedList<>();
     }
 
     public Long getId() {
@@ -35,3 +35,4 @@ public class Inventory {
         this.books.add(book);
     }
 }
+
