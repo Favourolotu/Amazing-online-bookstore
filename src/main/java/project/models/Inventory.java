@@ -1,6 +1,8 @@
 package project.models;
 
 import jakarta.persistence.*;
+
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -13,6 +15,7 @@ public class Inventory {
     private List<Book> books;
 
     public Inventory(){
+        books = new LinkedList<>();
     }
 
     public Long getId() {
@@ -30,5 +33,12 @@ public class Inventory {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+
+    public void addBook(Book book){
+        this.books.add(book);
+    }
+
+
+
 }
 
