@@ -14,11 +14,12 @@ public class ShoppingCart {
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private List<Book> bookList;
 
-    @OneToOne(mappedBy = "shoppingCart")
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public ShoppingCart(){
-        bookList = new ArrayList<>();
+        this.bookList = new ArrayList<>();
     }
     public Long getId() {
         return id;

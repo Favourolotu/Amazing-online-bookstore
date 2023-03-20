@@ -14,14 +14,14 @@ public class User {
 
     private String userName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "id")
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "user")
     private ShoppingCart shoppingCart;
 
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
-    private List<Book> purchasedBooks;
+    private List<Book> purchasedBooks = new ArrayList<Book>();
     public User() {
-        this.purchasedBooks = new ArrayList<Book>();
         this.shoppingCart = new ShoppingCart();
     }
 

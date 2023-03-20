@@ -42,11 +42,14 @@ public class UserController {
     public String defaultDisplay(Model model) {
         Iterable<Inventory> inventories = inventoryRepository.findAll();
         // One shopping cart per user
-        // User user = new User();
-        // user.setId(1L);
-        // user.setShoppingCart(new ShoppingCart());
-        // userRepository.save(user);
-        shoppingCartRepository.save(new ShoppingCart());
+        User user = new User();
+        user.setId(1L);
+
+        ShoppingCart shoppingCart = new ShoppingCart();
+        user.setShoppingCart(shoppingCart);
+        shoppingCart.setUser(user);
+        //userRepository.save(user);
+        shoppingCartRepository.save(shoppingCart);
         model.addAttribute("inventories", inventories);
         return "user-default-page";
     }
