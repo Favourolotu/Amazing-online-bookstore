@@ -17,6 +17,6 @@ public class LoginPageController {
      */
     @GetMapping("/startPage")
     public String logoutUser(Model model) {
-        return "LoginPage";
+        return "login-page";
     }
 }

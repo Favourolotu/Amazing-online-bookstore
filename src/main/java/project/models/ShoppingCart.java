@@ -14,8 +14,12 @@ public class ShoppingCart {
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private List<Book> bookList;
 
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     public ShoppingCart(){
-        bookList = new ArrayList<>();
+        this.bookList = new ArrayList<>();
     }
     public Long getId() {
         return id;
@@ -34,8 +38,8 @@ public class ShoppingCart {
         this.bookList.add(book);
     }
 
-    public void setBookList(Book book){
-        this.bookList.add(book);
+    public void setBookList(List<Book> books){
+        this.bookList = books;
     }
 
     public void removeBook (Book book){
@@ -45,6 +49,10 @@ public class ShoppingCart {
     public void clear(){
         this.bookList = new ArrayList<Book>();
     }
+
+    public void setUser(User user){ this.user = user;}
+
+    public User getUser () {return this.user;}
 
 
 }

@@ -23,7 +23,7 @@ public class UserControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("inventories"))
-                .andExpect(view().name("userDefaultPage"));
+                .andExpect(view().name("user-default-page"));
     }
 
 
@@ -35,8 +35,33 @@ public class UserControllerTest {
                         .param("bookName", String.valueOf("The Great Gatsby")))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(view().name("listOfBooksDisplay"));
+                .andExpect(view().name("list-of-books-display"));
     }
 
+    @Test
+    public void logoutTest() throws Exception {
+        mockMvc.perform(post("/logout")
+                        .contentType(MediaType.APPLICATION_FORM_URLENCODED))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("login-page"));
+    }
 
+    @Test
+    public void viewShoppingCartTest() throws Exception {
+        mockMvc.perform(get("/viewShoppingCart")
+                        .contentType(MediaType.APPLICATION_FORM_URLENCODED))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("view-shopping-cart"));
+    }
+
+    @Test
+    public void makePurchaseTest() throws Exception {
+        mockMvc.perform(post("/makePurchase")
+                        .contentType(MediaType.APPLICATION_FORM_URLENCODED))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("user-purchases"));
+    }
 }
