@@ -23,7 +23,7 @@ public class UserControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("inventories"))
-                .andExpect(view().name("userDefaultPage"));
+                .andExpect(view().name("user-default-page"));
     }
 
 
@@ -35,7 +35,7 @@ public class UserControllerTest {
                         .param("bookName", String.valueOf("The Great Gatsby")))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(view().name("listOfBooksDisplay"));
+                .andExpect(view().name("list-of-books-display"));
     }
 
 
