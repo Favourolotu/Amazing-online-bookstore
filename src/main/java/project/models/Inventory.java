@@ -1,6 +1,8 @@
 package project.models;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,6 +15,7 @@ public class Inventory {
     private List<Book> books;
 
     public Inventory(){
+        this.books = new ArrayList<>();
     }
 
     public Long getId() {
