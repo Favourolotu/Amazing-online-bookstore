@@ -14,11 +14,13 @@ public class User {
 
     private String userName;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "user")
     private ShoppingCart shoppingCart;
 
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
-    private List<Book> purchasedBooks;
+    private List<Book> purchasedBooks = new ArrayList<Book>();
     public User() {
         this.shoppingCart = new ShoppingCart();
     }
@@ -44,8 +46,8 @@ public class User {
         return shoppingCart;
     }
 
-    public void setShoppingCart(){
-        this.shoppingCart = new ShoppingCart();
+    public void setShoppingCart(ShoppingCart shoppingCart){
+        this.shoppingCart = shoppingCart;
     }
 
 
