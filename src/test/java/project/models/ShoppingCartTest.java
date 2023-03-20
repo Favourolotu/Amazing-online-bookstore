@@ -12,11 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 public class ShoppingCartTest {
 
-    @Test
+
     /**
      * This method tests the ID variable's getter and setter
      * from the ShoppingCart class
      */
+    @Test
     public void getSetIdTest() {
         ShoppingCart shoppingCart = new ShoppingCart();
         Long id = 1L;
@@ -25,26 +26,29 @@ public class ShoppingCartTest {
         assertTrue(shoppingCart.getId().equals(id));
     }
 
-    @Test
+
     /**
-     * This method tests the Shopping cart variable's getter and setter
+     * This method tests the User variable's getter and setter
      * from the ShoppingCart class
      */
-    public void setGetShoppingCartTest() {
-        User user = new User();
-        assertTrue(user.getShoppingCart() != null);
-
+    @Test
+    public void setGetUserTest() {
         ShoppingCart shoppingCart = new ShoppingCart();
-        user.setShoppingCart(shoppingCart);
 
-        assertTrue(user.getShoppingCart().equals(shoppingCart));
+        assertTrue(shoppingCart.getUser() == null);
+
+        User user = new User();
+        shoppingCart.setUser(user);
+
+        assertTrue(shoppingCart.getUser().equals(user));
     }
 
-    @Test
+
     /**
      * This method tests the  book list variable's getter and setter
      * from the ShoppingCart class
      */
+    @Test
     public void setGetBookListTest() {
         ShoppingCart shoppingCart = new ShoppingCart();
         Book book1 = new Book("1984", "George Orwell", "A dystopian novel set in a totalitarian society", "Secker & Warburg");
@@ -57,11 +61,12 @@ public class ShoppingCartTest {
         assertTrue(shoppingCart.getBookList().contains(book2));
     }
 
-    @Test
+
     /**
      * This method tests the ability to remove a book object from the ShoppingCart class
      * Using the setter for the bookList variable for set-up
      */
+    @Test
     public void removeBookTest() {
         ShoppingCart shoppingCart = new ShoppingCart();
         Book book1 = new Book("1984", "George Orwell", "A dystopian novel set in a totalitarian society", "Secker & Warburg");
@@ -78,10 +83,10 @@ public class ShoppingCartTest {
 
     }
 
-    @Test
     /**
      * This method tests the ability clear the ShoppingCart class
      */
+    @Test
     public void clearShoppingCartTest() {
         ShoppingCart shoppingCart = new ShoppingCart();
         Book book1 = new Book("1984", "George Orwell", "A dystopian novel set in a totalitarian society", "Secker & Warburg");

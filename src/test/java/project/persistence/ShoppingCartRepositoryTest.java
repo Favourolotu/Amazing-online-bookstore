@@ -13,11 +13,12 @@ public class ShoppingCartRepositoryTest {
 
     @Autowired
     ShoppingCartRepository shoppingCartRepository;
-    @Test
+
     /**
      * This method tests for adding to a shopping cart and persisting it
      */
-    public void testAddToShoppingCart(){
+    @Test
+    public void addToShoppingCartTest(){
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.setId(100L);
         Book book1 = new Book("1984", "George Orwell", "A dystopian novel set in a totalitarian society", "Secker & Warburg");
@@ -34,11 +35,12 @@ public class ShoppingCartRepositoryTest {
         assertTrue(returned.getBookList().contains(book2));
     }
 
-    @Test
+
     /**
      * This method tests for removing from a shopping cart and persisting it
      */
-    public void testRemoveFromShoppingCart(){
+    @Test
+    public void removeFromShoppingCartTest(){
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.setId(100L);
         Book book1 = new Book("1984", "George Orwell", "A dystopian novel set in a totalitarian society", "Secker & Warburg");

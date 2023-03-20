@@ -8,11 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 public class UserTest {
 
-    @Test
+
     /**
      * This method tests the username variable's getter and setter
      * from the user class
      */
+    @Test
     public void getSetUserNameTest() {
         User user = new User();
         String name = "Ryan";
@@ -21,11 +22,12 @@ public class UserTest {
         assertTrue(user.getUserName().equals(name));
     }
 
-    @Test
+
     /**
      * This method tests the ID variable's getter and setter
      * from the user class
      */
+    @Test
     public void getSetIdTest() {
         User user = new User();
         Long id = 1L;
@@ -34,11 +36,12 @@ public class UserTest {
         assertTrue(user.getId().equals(id));
     }
 
-    @Test
+
     /**
      * This method tests the Shopping cart variable's getter and setter
      * from the user class
      */
+    @Test
     public void setGetShoppingCartTest() {
         User user = new User();
         assertTrue(user.getShoppingCart() != null);
@@ -49,11 +52,12 @@ public class UserTest {
         assertTrue(user.getShoppingCart().equals(shoppingCart));
     }
 
-    @Test
+
     /**
      * This method tests the Purchased books variable's getter and setter
      * from the user class
      */
+    @Test
     public void setGetPurchasedBooksTest() {
         User user = new User();
         Book book1 = new Book("1984", "George Orwell", "A dystopian novel set in a totalitarian society", "Secker & Warburg");
