@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="login mechanism working">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/MyUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/SecurityConfig.java" afterDir="false" />
+    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="Tests now work with security integration.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/LoginPageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/AuthenticationInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/LoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/WebMvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/OwnerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/owner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/owner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/controllers/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/controllers/OwnerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/models/OwnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/models/OwnerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +69,37 @@
       <recent name="project.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BookstoreApplication">
+  <component name="RunManager" selected="JUnit.OwnerTest">
+    <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controllers" />
+      <option name="MAIN_CLASS_NAME" value="project.controllers.OwnerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Amazing-Online-Bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.models" />
+      <option name="MAIN_CLASS_NAME" value="project.models.OwnerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserControllerTest.addNewBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Amazing-Online-Bookstore" />
       <extension name="coverage">
@@ -99,22 +111,6 @@
       <option name="PACKAGE_NAME" value="project.controllers" />
       <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
       <option name="METHOD_NAME" value="addNewBookTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserControllerTest.defaultDisplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Amazing-Online-Bookstore" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="project.logic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="project.controllers" />
-      <option name="MAIN_CLASS_NAME" value="project.controllers.UserControllerTest" />
-      <option name="METHOD_NAME" value="defaultDisplayTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,10 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerTest" />
+        <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="Spring Boot.BookstoreApplication" />
         <item itemvalue="JUnit.UserControllerTest.addNewBookTest" />
         <item itemvalue="JUnit.UserControllerTest.displayAddBookPageTest" />
-        <item itemvalue="JUnit.UserControllerTest.defaultDisplayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +167,7 @@
       <workItem from="1679356447709" duration="16194000" />
       <workItem from="1679373623436" duration="599000" />
       <workItem from="1679416955229" duration="4000" />
-      <workItem from="1679433283707" duration="974000" />
+      <workItem from="1679433283707" duration="5389000" />
     </task>
     <task id="LOCAL-00001" summary="publishing the branch.">
       <created>1678295461974</created>
@@ -193,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679371465473</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completely redid login code using Spring Security">
+      <created>1679434339126</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679434339126</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +207,8 @@
     <MESSAGE value="publishing the branch." />
     <MESSAGE value="initial commit" />
     <MESSAGE value="login mechanism working" />
-    <option name="LAST_COMMIT_MESSAGE" value="login mechanism working" />
+    <MESSAGE value="Completely redid login code using Spring Security" />
+    <MESSAGE value="Tests now work with security integration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests now work with security integration." />
   </component>
 </project>

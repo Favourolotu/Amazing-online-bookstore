@@ -54,12 +54,6 @@ public class BookstoreApplication {
             ownerRepository.save(owner);
             ownerRepository.save(owner2);
 
-
-
-
-
-
-
         };
     }
 

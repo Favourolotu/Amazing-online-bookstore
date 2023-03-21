@@ -1,6 +1,6 @@
 package project.models;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -15,15 +15,15 @@ public class OwnerTest {
     @Test
     public void testSetId(){
         owner = new Owner();
-        owner.setId(1l);
-        assertTrue(owner.getId() == 1l);
+        owner.setId(1L);
+        assertEquals(1L, (long) owner.getId());
     }
 
     @Test
     public void testGetId(){
         owner = new Owner();
-        owner.setId(2l);
-        assertEquals(2l, owner.getId());
+        owner.setId(2L);
+        assertEquals(2L, owner.getId());
     }
 
     @Test
@@ -35,7 +35,7 @@ public class OwnerTest {
         books.add(book1);
         books.add(book2);
         owner.setBooks(books);
-        assertTrue(owner.getBooks().size() == 2);
+        assertEquals(2, owner.getBooks().size());
     }
 
     @Test
