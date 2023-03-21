@@ -2,12 +2,14 @@ package project;
 
 import project.models.Book;
 import project.models.Owner;
+import project.models.User;
 import project.persistence.BookRepository;
 import project.persistence.OwnerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import project.persistence.UserRepository;
 
 import java.util.Arrays;
 
@@ -20,17 +22,24 @@ public class BookstoreApplication {
 
 
     @Bean
-    public CommandLineRunner initDatabase(BookRepository bookRepository, OwnerRepository ownerRepository) {
+    public CommandLineRunner initDatabase(BookRepository bookRepository, OwnerRepository ownerRepository, UserRepository userRepository) {
         return (args) -> {
 
             // Create an inventory
             Owner owner = new Owner();
+            owner.setUsername("validUsername");
+            owner.setPassword("validPassword");
 
             // Create an inventory
             Owner owner2 = new Owner();
+            owner2.setUsername("u");
+            owner2.setPassword("p");
 
             // Create an inventory
             Owner owner3 = new Owner();
+            owner3.setUsername("test");
+            owner3.setPassword("test");
+
 
 
             books[0].setOwner(owner);
@@ -48,6 +57,10 @@ public class BookstoreApplication {
             ownerRepository.save(owner2);
             ownerRepository.save(owner3);
 
+            User user = new User();
+            user.setUsername("bing");
+            user.setPassword("bong");
+            userRepository.save(user);
 
         };
     }
@@ -69,6 +82,5 @@ public class BookstoreApplication {
             new Book("The Bell Jar", "Sylvia Plath", "A semi-autobiographical novel about a young woman's descent into mental illness", "Heinemann"),
             new Book("The Picture of Dorian Gray", "Oscar Wilde", "A novel about a man who remains youthful while his portrait ages and bears the scars of his sins", "Ward, Lock, and Company")
     };
-
 
 }

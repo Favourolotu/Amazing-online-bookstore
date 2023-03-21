@@ -8,7 +8,7 @@
   <h1>Edit Book View</h1>
   <p th:text="${book.ISBN}"></p>
 
-  <form th:action="@{/owner/edit}" th:object="${book}" th:method="POST">
+  <form th:action="@{/owner/{ownerId}/edit(ownerId=${ownerId})}" th:object="${book}" th:method="POST">
     <input type="hidden" id="bookISBN" name="bookISBN" th:value="${book.ISBN}">
     <input type="hidden" id="ownerId" name="ownerId" th:value="${ownerId}">
 
@@ -27,6 +27,6 @@
     <input type="submit" value="Save Changes">
   </form>
 
-  <a th:href="@{/owner(ownerId=${ownerId})}">Return to home page</a>
+  <a th:href="@{/owner/{ownerId}(ownerId=${ownerId})}">Return to home page</a>
 </body>
 </html>
