@@ -13,7 +13,7 @@ public class Book {
     private String publisher;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    private Inventory inventory;
+    private Owner owner;
 
     public Book(){}
 
@@ -63,11 +63,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Inventory getInventory() {
-        return inventory;
+    public Owner getOwner() {
+        return owner;
     }
 
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }

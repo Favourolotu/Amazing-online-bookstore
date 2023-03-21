@@ -2,8 +2,6 @@ package project.models;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
@@ -74,17 +72,17 @@ public class BookTest {
 
     @Test
     public void testSetInventory(){
-        Inventory inventory = new Inventory();
+        Owner owner = new Owner();
         book = new Book("percy jackson", "e.b. things", "greek gods", "rick");
-        book.setInventory(inventory);
-        assertTrue(book.getInventory() == inventory);
+        book.setOwner(owner);
+        assertTrue(book.getOwner() == owner);
     }
     @Test
     public void testGetInventory(){
-        Inventory inventory = new Inventory();
+        Owner owner = new Owner();
         book = new Book("percy jackson", "e.b. things", "greek gods", "rick");
-        book.setInventory(inventory);
-        assertEquals(inventory, book.getInventory());
+        book.setOwner(owner);
+        assertEquals(owner, book.getOwner());
     }
 
 }

@@ -7,42 +7,38 @@
 <body>
 <h1>Owner Page View</h1>
 
-<div th:each="inventory : ${inventories}">
-  <table>
-    <caption th:inline="text">Inventory [[${inventory.id}]]</caption>
-    <thead>
-    <tr>
-      <th>ISBN</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Description</th>
-      <th>Publisher</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="book : ${inventory.books}">
-      <td th:text="${book.ISBN}"></td>
-      <td th:text="${book.title}"></td>
-      <td th:text="${book.author}"></td>
-      <td th:text="${book.description}"></td>
-      <td th:text="${book.publisher}"></td>
-      <td>
-        <a th:href="@{/owner/edit(bookISBN=${book.ISBN})}">Edit Book</a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+<table>
+  <caption th:inline="text">Owner id: [[${owner.id}]]</caption>
+  <thead>
+  <tr>
+    <th>ISBN</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Description</th>
+    <th>Publisher</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="book : ${owner.books}">
+    <td th:text="${book.ISBN}"></td>
+    <td th:text="${book.title}"></td>
+    <td th:text="${book.author}"></td>
+    <td th:text="${book.description}"></td>
+    <td th:text="${book.publisher}"></td>
+    <td>
+      <a th:href="@{/owner/edit(bookISBN=${book.ISBN}, ownerId=${owner.id})}">Edit Book</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
 
 
-  <a th:href="@{/owner/add(inventoryId=${inventory.id})}">Add New Book</a>
+  <a th:href="@{/owner/add(ownerId=${owner.id})}">Add New Book</a>
 
   <hr>
 
-</div>
-<form action="#" th:action="@{/logout}" method="post">
-  <p><input type="submit" value="Logout" /></p>
-</form>
-<br>
+
+<a th:href="@{/}">Logout</a>
 
 </body>
 </html>

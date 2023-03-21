@@ -1,9 +1,9 @@
 package project;
 
 import project.models.Book;
-import project.models.Inventory;
+import project.models.Owner;
 import project.persistence.BookRepository;
-import project.persistence.InventoryRepository;
+import project.persistence.OwnerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,33 +20,33 @@ public class BookstoreApplication {
 
 
     @Bean
-    public CommandLineRunner initDatabase(BookRepository bookRepository, InventoryRepository inventoryRepository) {
+    public CommandLineRunner initDatabase(BookRepository bookRepository, OwnerRepository ownerRepository) {
         return (args) -> {
 
             // Create an inventory
-            Inventory inventory = new Inventory();
+            Owner owner = new Owner();
 
             // Create an inventory
-            Inventory inventory2 = new Inventory();
+            Owner owner2 = new Owner();
 
             // Create an inventory
-            Inventory inventory3 = new Inventory();
+            Owner owner3 = new Owner();
 
 
-            books[0].setInventory(inventory);
-            books[1].setInventory(inventory);
-            books[2].setInventory(inventory);
-            books[3].setInventory(inventory2);
-            books[4].setInventory(inventory2);
-            books[5].setInventory(inventory3);
-            books[6].setInventory(inventory3);
-            books[7].setInventory(inventory3);
+            books[0].setOwner(owner);
+            books[1].setOwner(owner);
+            books[2].setOwner(owner);
+            books[3].setOwner(owner2);
+            books[4].setOwner(owner2);
+            books[5].setOwner(owner3);
+            books[6].setOwner(owner3);
+            books[7].setOwner(owner3);
 
             bookRepository.saveAll(Arrays.asList(books[0], books[1], books[2], books[3], books[4], books[5], books[6], books[7]));
 
-            inventoryRepository.save(inventory);
-            inventoryRepository.save(inventory2);
-            inventoryRepository.save(inventory3);
+            ownerRepository.save(owner);
+            ownerRepository.save(owner2);
+            ownerRepository.save(owner3);
 
 
         };

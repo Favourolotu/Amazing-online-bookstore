@@ -1,22 +1,18 @@
 package project.models;
 
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Inventory {
+public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany(mappedBy = "inventory", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private List<Book> books;
 
-    public Inventory(){
-        this.books = new ArrayList<>();
-    }
+    public Owner(){}
 
     public Long getId() {
         return id;
