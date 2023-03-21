@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 @Entity
 @Table(name = "users")
@@ -59,7 +60,13 @@ public class User {
 
 
     public void setPurchasedBook(Book book){
-        this.purchasedBooks.add(book);
+        if (purchasedBooks.contains(book)){
+            // TODO keep track of quantities
+            return;
+        } else {
+            this.purchasedBooks.add(book);
+        }
+
     }
 
 }

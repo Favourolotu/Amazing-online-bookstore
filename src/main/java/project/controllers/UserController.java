@@ -41,16 +41,6 @@ public class UserController {
     @GetMapping("/userDefaultPage")
     public String defaultDisplay(Model model) {
         Iterable<Inventory> inventories = inventoryRepository.findAll();
-        // One shopping cart per user
-        //if (userRepository.findById(1L) != null){
-//            User user = new User();
-//            user.setId(1L);
-//            ShoppingCart shoppingCart = new ShoppingCart();
-//            user.setShoppingCart(shoppingCart);
-//            shoppingCart.setUser(user);
-//            userRepository.save(user);
-        //}
-
         model.addAttribute("inventories", inventories);
         return "user-default-page";
     }
@@ -87,7 +77,6 @@ public class UserController {
     @GetMapping("/viewShoppingCart")
     public String viewShoppingCart( Model model) {
         User user = userRepository.findUserById(1L);
-        // ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L) ;
         model.addAttribute("books", user.getShoppingCart().getBookList());
         return "view-shopping-cart";
     }
@@ -119,10 +108,6 @@ public class UserController {
     public String removeFromShoppingCart(@PathVariable Long ISBN) {
         Book book = bookRepository.findByISBN(ISBN);
 
-        //ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
-        //shoppingCart.removeBook(book);
-        //shoppingCartRepository.save(shoppingCart);
-
         User user = userRepository.findUserById(1L);
         ShoppingCart shoppingCart = user.getShoppingCart();
         shoppingCart.removeBook(book);
@@ -133,13 +118,6 @@ public class UserController {
 
     @PostMapping("/makePurchase")
     public String makePurchase( Model model) {
-        // TODO get books in shopping cart and add them to the user purchase list
-
-        // User user = userRepository.findById(1);
-        // ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
-        // List<Book> bookList = shoppingCart.getBookList();
-        // shoppingCart.clear();
-        // shoppingCartRepository.save(shoppingCart);
 
         User user = userRepository.findUserById(1L);
         ShoppingCart shoppingCart = user.getShoppingCart();

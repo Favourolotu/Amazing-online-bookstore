@@ -34,7 +34,11 @@ public class ShoppingCart {
     }
 
     public void addBook (Book book){
-        this.bookList.add(book);
+        if (bookList.contains(book)){
+            return;
+        } else {
+            this.bookList.add(book);
+        }
     }
 
     public void setBookList(List<Book> books){
