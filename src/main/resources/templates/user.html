@@ -5,8 +5,11 @@
   <title>Amazin Bookstore</title>
 </head>
 <body>
+<h1>User Page View</h1>
 
-<h1 th:inline="text">User [[${userId}]] View</h1>
+<p th:inline="text">User [[${username}]]</p>
+
+<a th:href="@{/logout}">Logout</a>
 
 </body>
 </html>

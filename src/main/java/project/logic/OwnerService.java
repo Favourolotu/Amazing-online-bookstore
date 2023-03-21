@@ -1,5 +1,6 @@
 package project.logic;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import project.models.Book;
@@ -17,8 +18,8 @@ public class OwnerService {
 
     // returns the owner if the given username and password are found in the database
 
-    public void addNewBook(Long ownerId, Book book) {
-        book.setOwner(getOwnerById(ownerId));
+    public void addNewBook(String username, Book book) {
+        book.setOwner(getOwnerByUsername(username));
         bookRepository.save(book);
     }
 
@@ -31,14 +32,11 @@ public class OwnerService {
         bookRepository.save(book);
     }
 
-    public Owner getOwnerById(Long id) {
-        return ownerRepository.findById(id).orElseThrow(() -> new RuntimeException("error finding owner"));
+    public Owner getOwnerByUsername(String username) {
+        return ownerRepository.findOwnerByUsername(username).orElseThrow(() -> new RuntimeException("error finding owner"));
     }
 
     public Book getBookById(Long ISBN) {
         return bookRepository.findById(ISBN).orElseThrow(() -> new RuntimeException("error finding book"));
     }
-
-
-
 }

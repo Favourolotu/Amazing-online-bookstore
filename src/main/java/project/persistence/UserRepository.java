@@ -2,7 +2,8 @@ package project.persistence;
 
 import org.springframework.data.repository.CrudRepository;
 import project.models.User;
+import java.util.Optional;
 
 public interface UserRepository extends CrudRepository<User, Long> {
-    User findByUsernameAndPassword(String username, String password);
+    Optional<User> findUserByUsername(String username);
 }

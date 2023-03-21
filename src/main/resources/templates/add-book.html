@@ -5,26 +5,26 @@
   <title>Amazin Bookstore</title>
 </head>
 <body>
-  <h1>Add Book View</h1>
+<h1>Add Book View</h1>
 
-  <form th:action="@{/owner/{ownerId}/add(ownerId=${ownerId})}" th:object="${book}" th:method="PUT">
+<form th:action="@{/owner/{username}/add(username=${username})}" th:object="${book}" th:method="PUT">
 
-    <label for="title">Title:</label>
-    <input type="text" id="title" th:field="*{title}" required>
+  <label for="title">Title:</label>
+  <input type="text" id="title" th:field="*{title}" required>
 
-    <label for="author">Author:</label>
-    <input type="text" id="author" th:field="*{author}" required>
+  <label for="author">Author:</label>
+  <input type="text" id="author" th:field="*{author}" required>
 
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" th:value="*{description}" required>
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" th:value="*{description}" required>
 
-    <label for="publisher">Publisher:</label>
-    <input type="text" id="publisher" name="publisher" th:value="*{publisher}" required>
+  <label for="publisher">Publisher:</label>
+  <input type="text" id="publisher" name="publisher" th:value="*{publisher}" required>
 
-    <input type="submit" value="Add Book">
-  </form>
+  <input type="submit" value="Add Book">
+</form>
 
 
-  <a th:href="@{/owner/{ownerId}(ownerId=${ownerId})}">Return to home page</a>
+<a th:href="@{/owner/{username}(username=${username})}">Return to home page</a>
 </body>
 </html>

@@ -25,42 +25,40 @@ public class BookstoreApplication {
     public CommandLineRunner initDatabase(BookRepository bookRepository, OwnerRepository ownerRepository, UserRepository userRepository) {
         return (args) -> {
 
-            // Create an inventory
+            User user = new User();
+            user.setUsername("bing");
+            user.setPassword("bong");
+            userRepository.save(user);
+
+            User user2 = new User();
+            user2.setUsername("user2");
+            user2.setPassword("pass");
+            userRepository.save(user2);
+
             Owner owner = new Owner();
-            owner.setUsername("validUsername");
-            owner.setPassword("validPassword");
+            owner.setUsername("owner");
+            owner.setPassword("pass");
 
-            // Create an inventory
             Owner owner2 = new Owner();
-            owner2.setUsername("u");
-            owner2.setPassword("p");
-
-            // Create an inventory
-            Owner owner3 = new Owner();
-            owner3.setUsername("test");
-            owner3.setPassword("test");
-
-
+            owner2.setUsername("owner2");
+            owner2.setPassword("pass");
 
             books[0].setOwner(owner);
             books[1].setOwner(owner);
             books[2].setOwner(owner);
             books[3].setOwner(owner2);
             books[4].setOwner(owner2);
-            books[5].setOwner(owner3);
-            books[6].setOwner(owner3);
-            books[7].setOwner(owner3);
 
             bookRepository.saveAll(Arrays.asList(books[0], books[1], books[2], books[3], books[4], books[5], books[6], books[7]));
 
             ownerRepository.save(owner);
             ownerRepository.save(owner2);
-            ownerRepository.save(owner3);
 
-            User user = new User();
-            user.setUsername("bing");
-            user.setPassword("bong");
-            userRepository.save(user);
+
+
+
+
+
 
         };
     }

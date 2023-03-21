@@ -3,6 +3,8 @@ package project.persistence;
 import project.models.Owner;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Optional;
+
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
-    Owner findByUsernameAndPassword(String username, String password);
+    Optional<Owner> findOwnerByUsername(String username);
 }
