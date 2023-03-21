@@ -42,14 +42,15 @@ public class UserController {
     public String defaultDisplay(Model model) {
         Iterable<Inventory> inventories = inventoryRepository.findAll();
         // One shopping cart per user
-        User user = new User();
-        user.setId(1L);
+        //if (userRepository.findById(1L) != null){
+//            User user = new User();
+//            user.setId(1L);
+//            ShoppingCart shoppingCart = new ShoppingCart();
+//            user.setShoppingCart(shoppingCart);
+//            shoppingCart.setUser(user);
+//            userRepository.save(user);
+        //}
 
-        ShoppingCart shoppingCart = new ShoppingCart();
-        user.setShoppingCart(shoppingCart);
-        shoppingCart.setUser(user);
-        //userRepository.save(user);
-        shoppingCartRepository.save(shoppingCart);
         model.addAttribute("inventories", inventories);
         return "user-default-page";
     }
@@ -77,6 +78,7 @@ public class UserController {
         return "list-of-books-display";
     }
 
+
     /**
      * This method handles the request to view the shopping cart
      * @param model
@@ -84,9 +86,9 @@ public class UserController {
      */
     @GetMapping("/viewShoppingCart")
     public String viewShoppingCart( Model model) {
-
-        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L) ;
-        model.addAttribute("books", shoppingCart.getBookList());
+        User user = userRepository.findUserById(1L);
+        // ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L) ;
+        model.addAttribute("books", user.getShoppingCart().getBookList());
         return "view-shopping-cart";
     }
 
@@ -100,11 +102,12 @@ public class UserController {
         // get specific book with id input by user into shopping cart
         Book book = bookRepository.findByISBN(ISBN);
 
-        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
+        User user = userRepository.findUserById(1L);
+        ShoppingCart shoppingCart = user.getShoppingCart();
         shoppingCart.addBook(book);
-        shoppingCartRepository.save(shoppingCart);
+        userRepository.save(user);
 
-        return "redirect:/view-shopping-cart";
+        return "redirect:/viewShoppingCart";
     }
 
     /**
@@ -116,11 +119,16 @@ public class UserController {
     public String removeFromShoppingCart(@PathVariable Long ISBN) {
         Book book = bookRepository.findByISBN(ISBN);
 
-        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
-        shoppingCart.removeBook(book);
-        shoppingCartRepository.save(shoppingCart);
+        //ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
+        //shoppingCart.removeBook(book);
+        //shoppingCartRepository.save(shoppingCart);
 
-        return "redirect:/view-shopping-cart";
+        User user = userRepository.findUserById(1L);
+        ShoppingCart shoppingCart = user.getShoppingCart();
+        shoppingCart.removeBook(book);
+        userRepository.save(user);
+
+        return "redirect:/viewShoppingCart";
     }
 
     @PostMapping("/makePurchase")
@@ -128,10 +136,22 @@ public class UserController {
         // TODO get books in shopping cart and add them to the user purchase list
 
         // User user = userRepository.findById(1);
-        ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
-        List<Book> bookList = shoppingCart.getBookList();
+        // ShoppingCart shoppingCart = shoppingCartRepository.findShoppingCartById(1L);
+        // List<Book> bookList = shoppingCart.getBookList();
+        // shoppingCart.clear();
+        // shoppingCartRepository.save(shoppingCart);
+
+        User user = userRepository.findUserById(1L);
+        ShoppingCart shoppingCart = user.getShoppingCart();
+
+        for (Book book: shoppingCart.getBookList()){
+            user.setPurchasedBook(book);
+        }
+
+        List<Book> bookList = user.getPurchasedBooks();
+
         shoppingCart.clear();
-        shoppingCartRepository.save(shoppingCart);
+        userRepository.save(user);
 
         model.addAttribute("books", bookList);
         return "user-purchases";

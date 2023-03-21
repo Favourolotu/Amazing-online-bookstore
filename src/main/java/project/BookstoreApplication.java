@@ -2,8 +2,11 @@ package project;
 
 import project.models.Book;
 import project.models.Inventory;
+import project.models.ShoppingCart;
+import project.models.User;
 import project.persistence.BookRepository;
 import project.persistence.InventoryRepository;
+import project.persistence.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,7 +23,7 @@ public class BookstoreApplication {
 
 
     @Bean
-    public CommandLineRunner initDatabase(BookRepository bookRepository, InventoryRepository inventoryRepository) {
+    public CommandLineRunner initDatabase(BookRepository bookRepository, InventoryRepository inventoryRepository, UserRepository userRepository) {
         return (args) -> {
 
             // Create an inventory
@@ -47,6 +50,14 @@ public class BookstoreApplication {
             inventoryRepository.save(inventory);
             inventoryRepository.save(inventory2);
             inventoryRepository.save(inventory3);
+
+
+            User user = new User();
+            // user.setId(1L);
+            ShoppingCart shoppingCart = new ShoppingCart();
+            user.setShoppingCart(shoppingCart);
+            shoppingCart.setUser(user);
+            userRepository.save(user);
 
 
         };

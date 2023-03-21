@@ -14,8 +14,7 @@ public class ShoppingCart {
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private List<Book> bookList;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
+    @OneToOne(mappedBy = "shoppingCart")
     private User user;
 
     public ShoppingCart(){
