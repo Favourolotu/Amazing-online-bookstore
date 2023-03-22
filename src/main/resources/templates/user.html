@@ -3,11 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <title>Amazing Bookstore</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- <script type="application/javascript" src="/script.js"></script>-->
+
+  <script>
+    // const btn = document.querySelector("#sortButton");
+    //const option = document.getElementById("sortOption");
+
+    function showOption(){
+      const elems =document.getElementsByName("filterOption");
+      console.log(elems);
+    }
+
+    function sort(table, column, asc =true){
+      const dirModifier = asc ? 1 : -1;
+      const tBody = table.tBodies[0];
+      const rows = Array.from(tBody.querySelectorAll('tr'));
+
+      //sort rows
+      const sortedRows = rows.sort((a, b) =>{
+        const aColText = a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
+        const bColText = b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
+
+        return aColText > bColText ? (1*dirModifier) : (-1*dirModifier)
+      })
+
+      //clear out table
+      while (tBody.firstChild){
+        tBody.removeChild(tBody.firstChild);
+      }
+
+      //re-add sorted rows
+      tBody.append(...sortedRows);
+    }
+
+    function sortTable(){
+      let sortOption = $('#sortOption option:selected').text();
+
+      if(sortOption == 'Title'){
+        sort(document.querySelector('table'), 1);
+      }
+      else if(sortOption == 'Author'){
+        sort(document.querySelector('table'), 2);
+      }
+      else if(sortOption == 'Description'){
+        sort(document.querySelector('table'), 3);
+      }
+      else if(sortOption == 'Publisher'){
+        sort(document.querySelector('table'), 4);
+      }
+      else if(sortOption == 'Stock'){
+        sort(document.querySelector('table'), 5);
+      }else{
+        sort(document.querySelector('table'), 0);
+      }
+
+    }
+  </script>
 </head>
 <body>
+
 <h1 th:inline="text">User: [[${username}]]</h1>
 
 <h1>Welcome to The Amazing Online Bookstore</h1>
+<br>
+
+<label>Sort By:</label>
+<select id="sortOption">
+  <option value="ISBN">ISBN</option>
+  <option value="Title">Title</option>
+  <option value="Author">Author</option>
+  <option value="Description">Description</option>
+  <option value="Publisher">Publisher</option>
+  <option value="Stock">Stock</option>
+</select>
+<button type="button" id="sortButton" onclick="sortTable()">Select option</button>
+
+<br>
+<br>
+
+<label>Filter By: </label>
+<input type="radio" name="filterOption"/>Author
+<input type="radio" name="filterOption"/>Publisher
+<input type="text" id="searchedItem" placeholder="Search author or publisher..."/>
+<button type="button" id="filterButton" onclick="showOption()">Add filter</button>
+<br>
 <br>
 
 <table>
