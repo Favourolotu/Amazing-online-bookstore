@@ -16,18 +16,17 @@ The application allows bookstore owners to upload and edit book information, suc
 ## How to Run
 1. Clone the Repo using any Java IDE
 2. Navigate to BookstoreApplication.java and click run
-3. The initial entrypont of the web application is "/startPage"
-4. Once Spring has intiialized, type in "localhost:8080/startPage" into a browser
+3. The initial entrypoint of the web application is "/login"
+4. Once Spring has initialized, type in "localhost:8080/startPage" into a browser
 5. From here, you can access the web application
 
-## Future Improvments
-- Adding a repository for keeping track of the books puchased by a user (Currently just displaying books purchased)
-- Linking the shopping cart to the current user
-- Adding Css styling to the views
-- Unifying the naming conventions of the html templates
+## Future Improvements
+- Adding CSS styling to the views
+- Adding book images to book entities
+- Book recommendations based on Jaccard distancing
 
 ## This project was worked on by:
 - Chase Scott
-- Favour Olutu
+- Favour Olotu
 - Joseph Anyia
 

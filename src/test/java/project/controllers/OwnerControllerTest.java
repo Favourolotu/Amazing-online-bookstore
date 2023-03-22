@@ -55,7 +55,7 @@ public class OwnerControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("book"))
-                .andExpect(content().string(containsString("<h1>Edit Book View</h1>")))
+                .andExpect(content().string(containsString("<h1>Edit Book #1</h1>")))
                 .andExpect(view().name("edit-book"));
 
     }
@@ -70,7 +70,8 @@ public class OwnerControllerTest {
                         .param("title", "test-title")
                         .param("author", "test-author")
                         .param("description", "test-description")
-                        .param("publisher", "test-publisher"))
+                        .param("publisher", "test-publisher")
+                        .param("stock", "0"))
                 .andDo(print())
                 .andExpect(status().isFound())
                 .andExpect(redirectedUrl("/owner/owner"));
