@@ -6,6 +6,7 @@
 </head>
 <body>
 
+<h1 th:inline="text">User: [[${username}]]</h1>
 
 <table>
     <caption>Search Result: </caption>
@@ -16,6 +17,7 @@
         <th> Author </th>
         <th> Description </th>
         <th> Publisher </th>
+        <th>Stock</th>
     </tr>
 
     <tr th:each="book : ${books}">
@@ -24,29 +26,30 @@
         <td th:text="${book.author}"></td>
         <td th:text="${book.description}"></td>
         <td th:text="${book.publisher}"></td>
+        <td th:text="${book.stock}"></td>
 
-        <td>
+        <!--td>
             <form th:action="@{/addToShoppingCart/{bookID}(bookID=${book.ISBN})}" th:method="post">
                 <input type="hidden" name="bookID" th:value="${book.ISBN}" />
                 <input type="submit" value="Add to Cart">
             </form>
-        </td>
+        </td--->
 
     </tr>
 </table>
 
 <br>
-<form action="#" th:action="@{/searchForBook}" method="post">
+<!--form action="#" th:action="@{/searchForBook}" method="post">
     <p>Input Book Name: <input type="text" name="bookName"/>  <input type="submit" value="Search for Book" /></p>
-</form>
+</form-->
 <br>
 
 
-<form action="#" th:action="@{/viewShoppingCart}" method="get">
+<!--form action="#" th:action="@{/viewShoppingCart}" method="get">
     <p> <input type="submit" value="View Shopping Cart" /></p>
-</form>
+</form-->
 
-<form action="#" th:action="@{/userDefaultPage}" method="get">
+<form action="#" th:action="@{/user/{username}(username=${username})}" method="get">
     <p> <input type="submit" value="Return to Homepage" /></p>
 </form>
 

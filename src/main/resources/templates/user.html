@@ -2,10 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Amazin Bookstore</title>
+  <title>Amazing Bookstore</title>
 </head>
 <body>
-<h1 th:inline="text">User [[${username}]]</h1>
+<h1 th:inline="text">User: [[${username}]]</h1>
+
+<h1>Welcome to The Amazing Online Bookstore</h1>
+<br>
 
 <table>
   <thead>
@@ -26,13 +29,32 @@
     <td th:text="${book.description}"></td>
     <td th:text="${book.publisher}"></td>
     <td th:text="${book.stock}"></td>
+
+    <!--td>
+      <form th:action="@{/addToShoppingCart/{bookID}(bookID=${book.ISBN})}" th:method="post">
+        <input type="hidden" name="bookID" th:value="${book.ISBN}" />
+        <input type="submit" value="Add to Cart">
+      </form>
+    </td-->
+
   </tr>
   </tbody>
 </table>
 
-<hr>
+<form action="#" th:action="@{/user/{username}/search(username=${username})}" method="get">
+  <p>Input Book Name: <input type="text" name="bookName"/>  <input type="submit" value="Search for Book" /></p>
+</form>
 
-<a th:href="@{/logout}">Logout</a>
+<form action="#" th:action="@{/user/{username}/viewCart(username=${username})}" method="get">
+  <p><input type="submit" value="View Shopping Cart" /></p>
+</form>
+
+
+<hr>
+<form action="#" th:action="@{/logout}" method="get">
+  <p><input type="submit" value="Logout" /></p>
+</form>
+
 
 </body>
 </html>

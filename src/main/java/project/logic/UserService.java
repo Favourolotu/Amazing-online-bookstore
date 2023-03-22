@@ -1,51 +1,51 @@
-package project.controllers;
+package project.logic;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import project.logic.UserService;
+import org.springframework.stereotype.Service;
 import project.models.Book;
+import project.models.User;
 import project.persistence.BookRepository;
+import project.persistence.ShoppingCartRepository;
+import project.persistence.UserRepository;
 
-@Controller
-public class UserController {
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class UserService {
+    @Autowired
+    private ShoppingCartRepository shoppingCartRepository;
 
     @Autowired
     private BookRepository bookRepository;
 
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
-    @GetMapping("/user/{username}")
-    @PreAuthorize("#username == authentication.name")
-    public String getUserPage(@PathVariable String username, Model model) {
-        Iterable<Book> books = bookRepository.findAll();
-        model.addAttribute("username", username);
-        model.addAttribute("books", books);
-        return "user";
+
+
+    /**
+     * This method handles the response to the searchForBook endpoint
+     * @param bookName
+     * @return the view populated with the search results of books
+     */
+    public List<Book> searchForBooks(String bookName) {
+        return bookRepository.findByTitle(bookName);
     }
 
 
+    /**
+     * This method handles the request to view the shopping cart
+     * @return A view listing all the books a user has added to the cart
+     */
+    public List<Book> viewShoppingCart(String userName) {
+        Optional<User> user_optional = userRepository.findUserByUsername(userName);
 
-    @GetMapping("/user/{username}/search")
-    @PreAuthorize("#username == authentication.name")
-    public String searchForBooks(@PathVariable String username, @RequestParam("bookName") String bookName, Model model) {
-        model.addAttribute("username", username);
-        model.addAttribute("books", userService.searchForBooks(bookName));
-        return "list-books";
-    }
+        if (user_optional.isEmpty()){
+            throw new RuntimeException("Could not find user: " + userName);
+        }
 
-
-    @GetMapping("/user/{username}/viewCart")
-    @PreAuthorize("#username == authentication.name")
-    public String viewShoppingCart(@PathVariable String username, Model model) {
-
-        model.addAttribute("books", userService.viewShoppingCart(username));
-        return "view-cart";
+        return user_optional.get().getShoppingCart().getBookList();
     }
 
 //    /**
@@ -101,6 +101,5 @@ public class UserController {
 //        model.addAttribute("books", bookList);
 //        return "user-purchases";
 //    }
-//
 
 }

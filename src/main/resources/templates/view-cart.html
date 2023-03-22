@@ -5,9 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-
+<h1 th:inline="text">User: [[${username}]]</h1>
 <table>
-  <caption>List of books in shopping cart: </caption>
+  <caption>Books in shopping cart: </caption>
 
   <tr>
     <th> ISBN </th>
@@ -15,6 +15,7 @@
     <th> Author </th>
     <th> Description </th>
     <th> Publisher </th>
+    <th>Stock</th>
   </tr>
 
   <tr th:each="book : ${books}">
@@ -23,13 +24,14 @@
     <td th:text="${book.author}"></td>
     <td th:text="${book.description}"></td>
     <td th:text="${book.publisher}"></td>
+    <td th:text="${book.stock}"></td>
 
-    <td>
+    <!--td>
       <form th:action="@{/removeFromShoppingCart/{bookID}(bookID=${book.ISBN})}" th:method="post">
         <input type="hidden" name="bookID" th:value="${book.ISBN}" />
         <input type="submit" value="remove from Cart">
       </form>
-    </td>
+    </td-->
 
   </tr>
 
@@ -37,12 +39,12 @@
 
 <br>
 
-<form action="#" th:action="@{/makePurchase}" method="post">
+<!--form action="#" th:action="@{/makePurchase}" method="post">
   <p> <input type="submit" value="Make Purchase" /></p>
-</form>
+</form-->
 
 
-<form action="#" th:action="@{/userDefaultPage}" method="get">
+<form action="#" th:action="@{/user/{username}(username=${username})}" method="get">
   <p> <input type="submit" value="Continue Browsing" /> </p>
 </form>
 
