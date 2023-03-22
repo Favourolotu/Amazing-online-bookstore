@@ -15,7 +15,7 @@
     <th> Author </th>
     <th> Description </th>
     <th> Publisher </th>
-    <th>Stock</th>
+    <!--th>Stock</th-->
   </tr>
 
   <tr th:each="book : ${books}">
@@ -24,7 +24,7 @@
     <td th:text="${book.author}"></td>
     <td th:text="${book.description}"></td>
     <td th:text="${book.publisher}"></td>
-    <td th:text="${book.stock}"></td>
+    <!--td th:text="${book.stock}"></td-->
 
 
 
@@ -42,7 +42,6 @@
 
         <input type="hidden" id="publisher" name="publisher" th:value="${book.publisher}" required>
 
-        <label for="stock">Quantity:</label>
         <input type="hidden" id="stock" name="stock" th:value="${book.stock}" required>
 
         <input type="submit" value="Remove From Cart">

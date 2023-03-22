@@ -55,7 +55,7 @@ public class UserService {
     public void addToShoppingCart(String userName, Book book) {
         // get specific book with id input by user into shopping cart
         Book book1 = bookRepository.findByTitle(book.getTitle()).get(0);
-        book1.setStock(book.getStock() - 1);
+        book1.setStock(book.getStock());
 
         Optional<User> user_optional = userRepository.findUserByUsername(userName);
 

@@ -20,6 +20,7 @@ public class User {
     @JoinColumn(name = "shoppingCart_id", referencedColumnName = "id")
     private ShoppingCart shoppingCart;
 
+
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private List<Book> purchasedBooks = new ArrayList<Book>();
 
