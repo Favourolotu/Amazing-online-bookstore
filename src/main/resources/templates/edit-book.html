@@ -5,8 +5,7 @@
   <title>Amazin Bookstore</title>
 </head>
 <body>
-<h1>Edit Book View</h1>
-<p th:text="${book.ISBN}"></p>
+<h1 th:inline="text">Edit Book #[[${book.ISBN}]]</h1>
 
 <form th:action="@{/owner/{username}/edit(username=${username})}" th:object="${book}" th:method="POST">
   <input type="hidden" id="bookISBN" name="bookISBN" th:value="${book.ISBN}">
@@ -23,6 +22,9 @@
 
   <label for="publisher">Publisher:</label>
   <input type="text" id="publisher" name="publisher" th:value="*{publisher}" required>
+
+  <label for="stock">Stock:</label>
+  <input type="number" id="stock" name="stock" th:value="*{stock}" required>
 
   <input type="submit" value="Save Changes">
 </form>

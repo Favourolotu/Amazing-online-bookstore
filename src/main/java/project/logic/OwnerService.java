@@ -29,6 +29,7 @@ public class OwnerService {
         book.setAuthor(editedBook.getAuthor());
         book.setDescription(editedBook.getDescription());
         book.setPublisher(editedBook.getPublisher());
+        book.setStock(editedBook.getStock());
         bookRepository.save(book);
     }
 

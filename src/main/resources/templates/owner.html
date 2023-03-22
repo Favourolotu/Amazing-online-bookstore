@@ -16,6 +16,7 @@
     <th>Author</th>
     <th>Description</th>
     <th>Publisher</th>
+    <th>Stock</th>
   </tr>
   </thead>
   <tbody>
@@ -25,6 +26,7 @@
     <td th:text="${book.author}"></td>
     <td th:text="${book.description}"></td>
     <td th:text="${book.publisher}"></td>
+    <td th:text="${book.stock}"></td>
     <td>
       <a th:href="@{/owner/{username}/edit(bookISBN=${book.ISBN}, username=${owner.username})}">Edit Book</a>
     </td>
