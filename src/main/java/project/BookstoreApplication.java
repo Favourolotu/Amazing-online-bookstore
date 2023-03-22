@@ -2,6 +2,7 @@ package project;
 
 import project.models.Book;
 import project.models.Owner;
+import project.models.ShoppingCart;
 import project.models.User;
 import project.persistence.BookRepository;
 import project.persistence.OwnerRepository;
@@ -28,11 +29,17 @@ public class BookstoreApplication {
             User user = new User();
             user.setUsername("bing");
             user.setPassword("bong");
+            ShoppingCart shoppingCart = new ShoppingCart();
+            user.setShoppingCart(shoppingCart);
+            shoppingCart.setUser(user);
             userRepository.save(user);
 
             User user2 = new User();
             user2.setUsername("user2");
             user2.setPassword("pass");
+            ShoppingCart shoppingCart2 = new ShoppingCart();
+            user2.setShoppingCart(shoppingCart2);
+            shoppingCart.setUser(user);
             userRepository.save(user2);
 
             Owner owner = new Owner();

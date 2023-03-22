@@ -2,6 +2,9 @@ package project.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -12,6 +15,13 @@ public class User {
     private String username;
     private String password;
     private String roles;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "shoppingCart_id", referencedColumnName = "id")
+    private ShoppingCart shoppingCart;
+
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
+    private List<Book> purchasedBooks = new ArrayList<Book>();
 
     public User() {
         this.roles = "USER";
@@ -47,5 +57,39 @@ public class User {
 
     public void setRoles(String roles) {
         this.roles = roles;
+    }
+
+    public ShoppingCart getShoppingCart(){
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart){
+        this.shoppingCart = shoppingCart;
+    }
+
+
+    public List<Book> getPurchasedBooks(){
+        return this.purchasedBooks;
+    }
+
+
+
+    public void setPurchasedBook(Book book){
+        boolean bookPreviouslyPurchased = false;
+        int index = 0;
+        for (Book b: purchasedBooks){
+            if (b.getISBN() == book.getISBN()) bookPreviouslyPurchased = true;
+            index ++;
+        }
+
+        if (bookPreviouslyPurchased){
+            Book bookToUpdate = purchasedBooks.remove(index-1);
+            bookToUpdate.setStock(bookToUpdate.getStock() + book.getStock());
+            purchasedBooks.add(bookToUpdate);
+
+        } else {
+            this.purchasedBooks.add(book);
+        }
+
     }
 }
