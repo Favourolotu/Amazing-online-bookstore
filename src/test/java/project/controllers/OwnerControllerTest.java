@@ -28,7 +28,7 @@ public class OwnerControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("owner"))
-                .andExpect(content().string(containsString("<a href=\"/owner/owner/add\">Add New Book</a>")))
+                .andExpect(content().string(containsString("<h1>Owner 1 View</h1>")))
                 .andExpect(view().name("owner"));
     }
 
