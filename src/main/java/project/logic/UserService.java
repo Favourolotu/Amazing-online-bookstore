@@ -54,6 +54,8 @@ public class UserService {
      */
     public void addToShoppingCart(String userName, Book book) {
         // get specific book with id input by user into shopping cart
+        Book book1 = bookRepository.findByTitle(book.getTitle()).get(0);
+        book1.setStock(book.getStock() - 1);
 
         Optional<User> user_optional = userRepository.findUserByUsername(userName);
 
@@ -62,8 +64,8 @@ public class UserService {
         }
         User user = user_optional.get();
         ShoppingCart shoppingCart = user.getShoppingCart();
-        shoppingCart.addBook(book);
-        userRepository.save(user);
+        shoppingCart.addBook(book1);
+        shoppingCartRepository.save(shoppingCart);
 
     }
 
@@ -72,6 +74,8 @@ public class UserService {
      */
     public void removeFromShoppingCart(String userName, Book book) {
 
+        Book book1 = bookRepository.findByTitle(book.getTitle()).get(0);
+
         Optional<User> user_optional = userRepository.findUserByUsername(userName);
 
         if (user_optional.isEmpty()){
@@ -79,8 +83,8 @@ public class UserService {
         }
         User user = user_optional.get();
         ShoppingCart shoppingCart = user.getShoppingCart();
-        shoppingCart.removeBook(book);
-        userRepository.save(user);
+        shoppingCart.removeBook(book1);
+        shoppingCartRepository.save(shoppingCart);
 
     }
 
@@ -95,6 +99,7 @@ public class UserService {
         ShoppingCart shoppingCart = user.getShoppingCart();
 
         for (Book book: shoppingCart.getBookList()){
+
             user.setPurchasedBook(book);
         }
 
