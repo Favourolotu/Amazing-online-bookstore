@@ -16,7 +16,7 @@
     <th> Author </th>
     <th> Description </th>
     <th> Publisher </th>
-    <!--th>Stock</th-->
+    <th>Stock</th>
   </tr>
 
   <tr th:each="book : ${books}">
@@ -25,7 +25,7 @@
     <td th:text="${book.author}"></td>
     <td th:text="${book.description}"></td>
     <td th:text="${book.publisher}"></td>
-    <!--td th:text="${book.stock}"></td-->
+    <td th:text="${book.stock}"></td>
 
   </tr>
 </table>
