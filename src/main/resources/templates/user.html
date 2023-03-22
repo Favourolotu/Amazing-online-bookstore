@@ -7,12 +7,26 @@
   <!-- <script type="application/javascript" src="/script.js"></script>-->
 
   <script>
-    // const btn = document.querySelector("#sortButton");
-    //const option = document.getElementById("sortOption");
-
     function showOption(){
-      const elems =document.getElementsByName("filterOption");
-      console.log(elems);
+      const input = document.getElementById("searchedItem");
+      const filter = input.value.toUpperCase();
+      const table = document.querySelector("table");
+      const tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (let i = 0; i < tr.length; i++) {
+        const authorData = tr[i].getElementsByTagName("td")[2];
+        const publisherData = tr[i].getElementsByTagName("td")[4];
+        if (authorData || publisherData) {
+          const txtValue = authorData.textContent || authorData.innerText;
+          const txtValue2 = publisherData.textContent || authorData.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
     }
 
     function sort(table, column, asc =true){
@@ -83,10 +97,8 @@
 <br>
 
 <label>Filter By: </label>
-<input type="radio" name="filterOption"/>Author
-<input type="radio" name="filterOption"/>Publisher
-<input type="text" id="searchedItem" placeholder="Search author or publisher..."/>
-<button type="button" id="filterButton" onclick="showOption()">Add filter</button>
+<input type="text" id="searchedItem" placeholder="Search author or publisher..." onkeyup="showOption()"/>
+
 <br>
 <br>
 
