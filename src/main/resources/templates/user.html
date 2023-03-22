@@ -15,12 +15,14 @@
 
       // Loop through all table rows, and hide those who don't match the search query
       for (let i = 0; i < tr.length; i++) {
+        const titleData = tr[i].getElementsByTagName("td")[1];
         const authorData = tr[i].getElementsByTagName("td")[2];
         const publisherData = tr[i].getElementsByTagName("td")[4];
-        if (authorData || publisherData) {
+        if (titleData || authorData || publisherData) {
           const txtValue = authorData.textContent || authorData.innerText;
           const txtValue2 = publisherData.textContent || authorData.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+          const txtValue3 = titleData.textContent || authorData.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1 || txtValue3.toUpperCase().indexOf(filter) > -1) {
             tr[i].style.display = "";
           } else {
             tr[i].style.display = "none";
@@ -82,26 +84,6 @@
 <h1>Welcome to The Amazing Online Bookstore</h1>
 <br>
 
-<label>Sort By:</label>
-<select id="sortOption">
-  <option value="ISBN">ISBN</option>
-  <option value="Title">Title</option>
-  <option value="Author">Author</option>
-  <option value="Description">Description</option>
-  <option value="Publisher">Publisher</option>
-  <option value="Stock">Stock</option>
-</select>
-<button type="button" id="sortButton" onclick="sortTable()">Select option</button>
-
-<br>
-<br>
-
-<label>Filter By: </label>
-<input type="text" id="searchedItem" placeholder="Search author or publisher..." onkeyup="showOption()"/>
-
-<br>
-<br>
-
 <table>
   <thead>
   <tr>
@@ -147,9 +129,29 @@
   </tbody>
 </table>
 
-<form action="#" th:action="@{/user/{username}/search(username=${username})}" method="get">
+<label>Sort By:</label>
+<select id="sortOption">
+  <option value="ISBN">ISBN</option>
+  <option value="Title">Title</option>
+  <option value="Author">Author</option>
+  <option value="Description">Description</option>
+  <option value="Publisher">Publisher</option>
+  <option value="Stock">Stock</option>
+</select>
+<button type="button" id="sortButton" onclick="sortTable()">Select option</button>
+
+<br>
+<br>
+
+<label>Filter By: </label>
+<input type="text" id="searchedItem" placeholder="Search author or publisher..." onkeyup="showOption()"/>
+
+<br>
+<br>
+
+<!-- <form action="#" th:action="@{/user/{username}/search(username=${username})}" method="get">
   <p>Input Book Name: <input type="text" name="bookName"/>  <input type="submit" value="Search for Book" /></p>
-</form>
+</form>-->
 
 <form action="#" th:action="@{/user/{username}/viewCart(username=${username})}" method="get">
   <p><input type="submit" value="View Shopping Cart" /></p>
