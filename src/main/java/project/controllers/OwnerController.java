@@ -1,66 +1,66 @@
 package project.controllers;
 
-import project.models.Book;
-import project.models.Inventory;
-import project.persistence.BookRepository;
-import project.persistence.InventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import project.logic.OwnerService;
+import project.models.Book;
 
 @Controller
 public class OwnerController {
 
     @Autowired
-    private BookRepository bookRepository;
+    private OwnerService ownerService;
 
-    @Autowired
-    private InventoryRepository inventoryRepository;
+    @GetMapping("/owner/{username}")
+    @PreAuthorize("#username == authentication.name")
+    public String getOwnerPage(@PathVariable String username, Model model) {
 
-
-    @GetMapping("/owner")
-    public String getOwnerPage(Model model) {
-        Iterable<Inventory> inventories = inventoryRepository.findAll();
-        model.addAttribute("inventories", inventories);
+        model.addAttribute("owner", ownerService.getOwnerByUsername(username));
         return "owner";
+
     }
 
-    @GetMapping("owner/add")
-    public String displayAddBookPage(@RequestParam("inventoryId") Long inventoryId, Model model) {
-        model.addAttribute("inventoryId", inventoryId);
+    @GetMapping("/owner/{username}/add")
+    @PreAuthorize("#username == authentication.name")
+    public String getAddBookPage(@PathVariable String username, Model model) {
+
+        model.addAttribute("owner", ownerService.getOwnerByUsername(username));
         model.addAttribute("book", new Book());
         return "add-book";
+
     }
 
-    @PostMapping("owner/add")
-    public String addNewBook(@ModelAttribute("book") Book book, @RequestParam("inventoryId") Long inventoryId) {
-        Inventory inventory = inventoryRepository.findById(inventoryId).orElseThrow(() -> new RuntimeException("Error finding inventory with ID: " + inventoryId));
+    @GetMapping("/owner/{username}/edit")
+    @PreAuthorize("#username == authentication.name")
+    public String getEditBookPage(@PathVariable("username") String username, @RequestParam("bookISBN") Long bookISBN, Model model) {
 
-        book.setInventory(inventory);
-        bookRepository.save(book);
-
-        return "redirect:/owner";
-    }
-
-    @GetMapping("owner/edit")
-    public String displayEditBookPage(@RequestParam("bookISBN") Long bookISBN, Model model) {
-        Book book = bookRepository.findById(bookISBN).orElseThrow(() -> new RuntimeException("Error finding book with ID: " + bookISBN));
-        model.addAttribute("book", book);
+        model.addAttribute("owner", ownerService.getOwnerByUsername(username));
+        model.addAttribute("book", ownerService.getBookById(bookISBN));
         return "edit-book";
+
     }
 
-    @PostMapping("owner/edit")
-    public String editBook(@RequestParam("bookISBN") Long bookISBN, @ModelAttribute Book editedBook) {
-        Book book = bookRepository.findById(bookISBN).orElseThrow(() -> new RuntimeException("Error finding book with ID: " + bookISBN));
-        book.setTitle(editedBook.getTitle());
-        book.setAuthor(editedBook.getAuthor());
-        book.setDescription(editedBook.getDescription());
-        book.setPublisher(editedBook.getPublisher());
-        bookRepository.save(book);
+    @PostMapping("owner/{username}/add")
+    @PreAuthorize("#username == authentication.name")
+    public String addNewBook(@ModelAttribute("book") Book book, @PathVariable("username") String username) {
 
-        return "redirect:/owner";
+        ownerService.addNewBook(username, book);
+
+        return "redirect:/owner/" + username;
+
+    }
+
+    @PostMapping("owner/{username}/edit")
+    @PreAuthorize("#username == authentication.name")
+    public String EditBook(@ModelAttribute("book") Book book, @PathVariable("username") String username, @RequestParam("bookISBN") Long bookISBN) {
+
+        ownerService.editBook(bookISBN, book);
+
+        return "redirect:/owner/" + username;
+
     }
 
 }

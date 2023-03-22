@@ -5,8 +5,7 @@
   <title>Amazin Bookstore</title>
 </head>
 <body>
-
-<h1 th:inline="text">Owner [[${owner.id}]] View</h1>
+<h1 th:inline="text">User [[${username}]]</h1>
 
 <table>
   <thead>
@@ -20,23 +19,19 @@
   </tr>
   </thead>
   <tbody>
-  <tr th:each="book : ${owner.books}">
+  <tr th:each="book : ${books}">
     <td th:text="${book.ISBN}"></td>
     <td th:text="${book.title}"></td>
     <td th:text="${book.author}"></td>
     <td th:text="${book.description}"></td>
     <td th:text="${book.publisher}"></td>
     <td th:text="${book.stock}"></td>
-    <td>
-      <a th:href="@{/owner/{username}/edit(bookISBN=${book.ISBN}, username=${owner.username})}">Edit Book</a>
-    </td>
   </tr>
   </tbody>
 </table>
 
 <hr>
 
-<a th:href="@{/owner/{username}/add(username=${owner.username})}">Add New Book</a>
 <a th:href="@{/logout}">Logout</a>
 
 </body>
