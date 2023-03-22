@@ -3,6 +3,7 @@ package project.logic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import project.models.Book;
+import project.models.ShoppingCart;
 import project.models.User;
 import project.persistence.BookRepository;
 import project.persistence.ShoppingCartRepository;
@@ -48,58 +49,61 @@ public class UserService {
         return user_optional.get().getShoppingCart().getBookList();
     }
 
-//    /**
-//     * This method handles a user request to add a book to the shopping cart
-//     * @param ISBN
-//     * @return Returns the shopping cart view with the new book added to it
-//     */
-//    @PostMapping("/addToShoppingCart/{ISBN}")
-//    public String addToShoppingCart(@PathVariable Long ISBN) {
-//        // get specific book with id input by user into shopping cart
-//        Book book = bookRepository.findByISBN(ISBN);
-//
-//        User user = userRepository.findUserById(1L);
-//        ShoppingCart shoppingCart = user.getShoppingCart();
-//        shoppingCart.addBook(book);
-//        userRepository.save(user);
-//
-//        return "redirect:/viewShoppingCart";
-//    }
-//
-//    /**
-//     * This method handles the user request to remove a book from the shopping cart
-//     * @param ISBN
-//     * @return The view of the shopping cart with the book removed
-//     */
-//    @PostMapping("/removeFromShoppingCart/{ISBN}")
-//    public String removeFromShoppingCart(@PathVariable Long ISBN) {
-//        Book book = bookRepository.findByISBN(ISBN);
-//
-//        User user = userRepository.findUserById(1L);
-//        ShoppingCart shoppingCart = user.getShoppingCart();
-//        shoppingCart.removeBook(book);
-//        userRepository.save(user);
-//
-//        return "redirect:/viewShoppingCart";
-//    }
-//
-//    @PostMapping("/makePurchase")
-//    public String makePurchase( Model model) {
-//
-//        User user = userRepository.findUserById(1L);
-//        ShoppingCart shoppingCart = user.getShoppingCart();
-//
-//        for (Book book: shoppingCart.getBookList()){
-//            user.setPurchasedBook(book);
-//        }
-//
-//        List<Book> bookList = user.getPurchasedBooks();
-//
-//        shoppingCart.clear();
-//        userRepository.save(user);
-//
-//        model.addAttribute("books", bookList);
-//        return "user-purchases";
-//    }
+    /**
+     * This method handles a user request to add a book to the shopping cart
+     */
+    public void addToShoppingCart(String userName, Book book) {
+        // get specific book with id input by user into shopping cart
+
+        Optional<User> user_optional = userRepository.findUserByUsername(userName);
+
+        if (user_optional.isEmpty()){
+            throw new RuntimeException("Could not find user: " + userName);
+        }
+        User user = user_optional.get();
+        ShoppingCart shoppingCart = user.getShoppingCart();
+        shoppingCart.addBook(book);
+        userRepository.save(user);
+
+    }
+
+    /**
+     * This method handles the user request to remove a book from the shopping cart
+     */
+    public void removeFromShoppingCart(String userName, Book book) {
+
+        Optional<User> user_optional = userRepository.findUserByUsername(userName);
+
+        if (user_optional.isEmpty()){
+            throw new RuntimeException("Could not find user: " + userName);
+        }
+        User user = user_optional.get();
+        ShoppingCart shoppingCart = user.getShoppingCart();
+        shoppingCart.removeBook(book);
+        userRepository.save(user);
+
+    }
+
+    public List<Book> makePurchase(String username) {
+
+        Optional<User> user_optional = userRepository.findUserByUsername(username);
+
+        if (user_optional.isEmpty()){
+            throw new RuntimeException("Could not find user: " + username);
+        }
+        User user = user_optional.get();
+        ShoppingCart shoppingCart = user.getShoppingCart();
+
+        for (Book book: shoppingCart.getBookList()){
+            user.setPurchasedBook(book);
+        }
+
+        List<Book> bookList = user.getPurchasedBooks();
+
+        shoppingCart.clear();
+        userRepository.save(user);
+
+        return bookList;
+    }
 
 }
