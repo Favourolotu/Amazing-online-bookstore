@@ -25,6 +25,9 @@ The application allows bookstore owners to upload and edit book information, suc
 - Adding book images to book entities
 - Book recommendations based on Jaccard distancing
 
+## Bug(s)
+- The stock number update while the user makes a process affects the stock in the book repository
+
 ## This project was worked on by:
 - Chase Scott
 - Favour Olotu
