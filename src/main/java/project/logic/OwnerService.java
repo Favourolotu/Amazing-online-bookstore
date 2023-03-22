@@ -8,9 +8,6 @@ import project.models.Owner;
 import project.persistence.BookRepository;
 import project.persistence.OwnerRepository;
 
-/**
- * @author Chase Scott
- */
 @Service
 public class OwnerService {
 
