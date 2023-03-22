@@ -11,9 +11,10 @@ public class Book {
     private String author;
     private String description;
     private String publisher;
+    private int stock;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    private Inventory inventory;
+    private Owner owner;
 
     public Book(){}
 
@@ -22,6 +23,7 @@ public class Book {
         this.author = author;
         this.description = description;
         this.publisher = publisher;
+        this.stock = 5;
     }
 
     public Long getISBN() {
@@ -63,11 +65,21 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Inventory getInventory() {
-        return inventory;
+    public int getStock() {
+        return stock;
     }
 
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+
 }

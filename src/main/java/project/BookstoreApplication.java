@@ -1,16 +1,15 @@
 package project;
 
 import project.models.Book;
-import project.models.Inventory;
-import project.models.ShoppingCart;
+import project.models.Owner;
 import project.models.User;
 import project.persistence.BookRepository;
-import project.persistence.InventoryRepository;
-import project.persistence.UserRepository;
+import project.persistence.OwnerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import project.persistence.UserRepository;
 
 import java.util.Arrays;
 
@@ -23,42 +22,37 @@ public class BookstoreApplication {
 
 
     @Bean
-    public CommandLineRunner initDatabase(BookRepository bookRepository, InventoryRepository inventoryRepository, UserRepository userRepository) {
+    public CommandLineRunner initDatabase(BookRepository bookRepository, OwnerRepository ownerRepository, UserRepository userRepository) {
         return (args) -> {
 
-            // Create an inventory
-            Inventory inventory = new Inventory();
+            User user = new User();
+            user.setUsername("bing");
+            user.setPassword("bong");
+            userRepository.save(user);
 
-            // Create an inventory
-            Inventory inventory2 = new Inventory();
+            User user2 = new User();
+            user2.setUsername("user2");
+            user2.setPassword("pass");
+            userRepository.save(user2);
 
-            // Create an inventory
-            Inventory inventory3 = new Inventory();
+            Owner owner = new Owner();
+            owner.setUsername("owner");
+            owner.setPassword("pass");
 
+            Owner owner2 = new Owner();
+            owner2.setUsername("owner2");
+            owner2.setPassword("pass");
 
-            books[0].setInventory(inventory);
-            books[1].setInventory(inventory);
-            books[2].setInventory(inventory);
-            books[3].setInventory(inventory2);
-            books[4].setInventory(inventory2);
-            books[5].setInventory(inventory3);
-            books[6].setInventory(inventory3);
-            books[7].setInventory(inventory3);
+            books[0].setOwner(owner);
+            books[1].setOwner(owner);
+            books[2].setOwner(owner);
+            books[3].setOwner(owner2);
+            books[4].setOwner(owner2);
 
             bookRepository.saveAll(Arrays.asList(books[0], books[1], books[2], books[3], books[4], books[5], books[6], books[7]));
 
-            inventoryRepository.save(inventory);
-            inventoryRepository.save(inventory2);
-            inventoryRepository.save(inventory3);
-
-
-            User user = new User();
-            // user.setId(1L);
-            ShoppingCart shoppingCart = new ShoppingCart();
-            user.setShoppingCart(shoppingCart);
-            shoppingCart.setUser(user);
-            userRepository.save(user);
-
+            ownerRepository.save(owner);
+            ownerRepository.save(owner2);
 
         };
     }
@@ -80,6 +74,5 @@ public class BookstoreApplication {
             new Book("The Bell Jar", "Sylvia Plath", "A semi-autobiographical novel about a young woman's descent into mental illness", "Heinemann"),
             new Book("The Picture of Dorian Gray", "Oscar Wilde", "A novel about a man who remains youthful while his portrait ages and bears the scars of his sins", "Ward, Lock, and Company")
     };
-
 
 }
