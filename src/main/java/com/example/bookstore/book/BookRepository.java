@@ -6,7 +6,8 @@ import org.springframework.data.repository.query.Param;
 
 public interface BookRepository extends CrudRepository<Book, Integer> {
 
-    @Query("SELECT b FROM Book b WHERE b.title LIKE %:query% OR b.author LIKE %:query% OR b.publisher LIKE %:query%")
+    @Query("SELECT b FROM Book b WHERE LOWER(b.title) LIKE LOWER(concat('%', :query, '%')) OR LOWER(b.author) LIKE LOWER(concat('%', :query, '%')) OR LOWER(b.publisher) LIKE LOWER(concat('%', :query, '%'))")
     Iterable<Book> search(@Param("query") String query);
+
 
 }

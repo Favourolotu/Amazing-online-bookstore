@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="publishing the branch.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="Ready for merging.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bookstore/BookstoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bookstore/BookstoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/MyUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/OwnerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Owner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/OwnerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bookstore/book/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bookstore/book/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list-books.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/owner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-purchases.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view-cart.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,9 +138,29 @@
       <workItem from="1680460555230" duration="16181000" />
       <workItem from="1680538536827" duration="350000" />
     </task>
+    <task id="LOCAL-00001" summary="publishing the branch.">
+      <created>1680539334588</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680539334588</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ready for merging.">
+      <created>1680539490704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680539490704</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="publishing the branch." />
+    <MESSAGE value="Ready for merging." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready for merging." />
   </component>
 </project>

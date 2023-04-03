@@ -23,7 +23,7 @@
   </form></li>
 
   <li style="float:right;"><a th:href="@{/logout}">Logout</a></li>
-  <li style="float:right;"><a th:href="@{#}">View Cart</a></li>
+  <li style="float:right;"><a th:href="@{/user/cart(username=${#authentication.getName()})}">View Cart</a></li>
 </ul>
 
 
