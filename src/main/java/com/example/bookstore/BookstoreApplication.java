@@ -23,7 +23,7 @@ public class BookstoreApplication {
     @Bean
     public CommandLineRunner initDatabase(AuthenticationService authService, BookService bookService) {
         return args -> {
-            authService.register(new RegisterRequest("chase", "pass", Role.USER));
+            authService.register(new RegisterRequest("user", "pass", Role.USER));
             authService.register(new RegisterRequest("owner", "pass", Role.OWNER));
 
             Arrays.stream(books).forEach(bookService::addBook);
@@ -46,8 +46,6 @@ public class BookstoreApplication {
             new Book("The Sun Also Rises", "Ernest Hemingway", "A novel about a group of American and British expatriates who travel from Paris to the Festival of San Fermín in Pamplona, Spain", "Scribner's", "/imgs/sun-also-rises.jpg"),
             new Book("The Bell Jar", "Sylvia Plath", "A semi-autobiographical novel about a young woman's descent into mental illness", "Heinemann", "/imgs/bell-jar.jpg"),
             new Book("The Picture of Dorian Gray", "Oscar Wilde", "A novel about a man who remains youthful while his portrait ages and bears the scars of his sins", "Ward, Lock, and Company", "/imgs/picture-of-dorian-gray.jpg")
-
-
     };
 
 }

@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebe28e19-38f7-4a0e-b23c-35d272da085b" name="Changes" comment="" />
+    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="publishing the branch.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bookstore/BookstoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bookstore/BookstoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/BookstoreApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/OwnerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/MyUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/OwnerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/Owner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/ShoppingCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/OwnerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/ShoppingCartRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/persistence/UserRepository.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,12 +105,16 @@
       </method>
     </configuration>
     <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="bookstore" />
+      <module name="Amazing-Online-Bookstore" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.bookstore.BookstoreApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.User" />
+      <item itemvalue="Spring Boot.BookstoreApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.User" />
