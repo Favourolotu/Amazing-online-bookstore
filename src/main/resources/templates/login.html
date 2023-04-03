@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sign in</h1>
+        <p>The bookstore for all of your needs</p>
+
+        <form th:action="@{/login}" th:method="POST">
+
+            <input th:type="text" id="username" th:name="username" placeholder="Username" required autofocus autocomplete="off"><br>
+
+            <input th:type="password" id="password" th:name="password" placeholder="Password" required autocomplete="off"><br>
+
+            <button type="submit" id="submit">Sign in</button>
+
+        </form>
+
+        <div th:if="${param.error != null}">
+            <p style="color: red;">Invalid username or password. Please try again.</p>
+        </div>
+
+    </div>
+
+    <p>New to Amazing Bookstore? <a th:href="@{/login/register}">Join now</a></p>
+
+    <footer>
+        Chase Scott - Favour Olotu - Joseph Anyia
+    </footer>
+
+</body>
+</html>
