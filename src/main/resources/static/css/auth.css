@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e7e7e7;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0.5rem;
+    text-align: center;
+    color: #333;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 0;
+    text-align: center;
+    color: #666;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#username, #password {
+    width: 20rem;
+    height: 5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding-left: 1rem;
+}
+
+#submit {
+    width: 20rem;
+    height: 5rem;
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.container {
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+p a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style for the radio buttons container */
+.radio-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+/* Style for the individual radio buttons */
+.radio-buttons label {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.radio-buttons input[type="radio"] {
+    display: inline-block; /* Display the radio buttons inline */
+    margin-right: 0.5rem;
+}
+
+

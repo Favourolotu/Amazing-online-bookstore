@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+<h1>Shopping Cart</h1>
+
+<p th:text = "${cart.user.username}"></p>
+
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${cart.items.entrySet()}">
+        <td th:text="${book.key.title}"></td>
+        <td th:text="${book.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form th:method="POST" th:action="@{/user/checkout}">
+    <input type="hidden" name="username" th:value="${#authentication.getName()}">
+
+    <button type="submit" class="button">Checkout</button>
+</form>
+
+<a th:href="@{/home}">Return to home page</a>
+
+</body>
+</html>
