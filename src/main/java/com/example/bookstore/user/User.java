@@ -1,14 +1,15 @@
 package com.example.bookstore.user;
 
+import com.example.bookstore.book.Book;
 import com.example.bookstore.cart.ShoppingCart;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 
 @Builder
@@ -30,6 +31,14 @@ public class User implements UserDetails {
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
     private ShoppingCart shoppingCart;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_purchased_books",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id"))
+    private Set<Book> purchasedBooks;
+
+
     public Integer getId() {
         return id;
     }
@@ -49,6 +58,14 @@ public class User implements UserDetails {
 
     public ShoppingCart getShoppingCart() {
         return shoppingCart;
+    }
+
+    public Set<Book> getPurchasedBooks() {
+        return purchasedBooks;
+    }
+
+    public void setPurchasedBooks(Set<Book> purchasedBooks) {
+        this.purchasedBooks = purchasedBooks;
     }
 
     @Override
@@ -80,5 +97,4 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 }
