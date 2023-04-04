@@ -27,8 +27,6 @@ public class OwnerController {
         return "redirect:/home";
     }
 
-
-
     @GetMapping("/edit")
     public String editBookPage(@RequestParam("bookISBN") Integer bookISBN, Model model) {
         model.addAttribute("book", bookService.getBookByISBN(bookISBN));
