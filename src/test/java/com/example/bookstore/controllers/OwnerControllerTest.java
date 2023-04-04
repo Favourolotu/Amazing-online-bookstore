@@ -42,19 +42,36 @@ public class OwnerControllerTest {
                         .param("stock", "0"))
                 .andDo(print())
                 .andExpect(status().isFound())
-                .andExpect(redirectedUrl("/owner/owner"));
+                .andExpect(redirectedUrl("/home"));
     }
 
     @Test
     @WithUserDetails("owner")
-    public void editBookPageTest() {
-
+    public void editBookPageTest() throws Exception {
+        mockMvc.perform(get("/owner/edit")
+                    .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                    .param("bookISBN", String.valueOf(1)))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("book"))
+                .andExpect(content().string(containsString("<h1>Edit Book")))
+                .andExpect(view().name("edit-book"));
     }
 
     @Test
     @WithUserDetails("owner")
-    public void editBookTest() {
-
+    public void editBookTest() throws Exception {
+        mockMvc.perform(post("/owner/edit")
+                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                        .param("bookISBN", String.valueOf(1))
+                        .param("title", "test-title")
+                        .param("author", "test-author")
+                        .param("description", "test-description")
+                        .param("publisher", "test-publisher")
+                        .param("stock", String.valueOf(5)))
+                .andDo(print())
+                .andExpect(status().isFound())
+                .andExpect(redirectedUrl("/home"));
     }
 
 
