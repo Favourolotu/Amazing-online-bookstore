@@ -77,11 +77,26 @@ header {
     cursor: pointer;
 }
 
+input[type="number"] {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 5px 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    transition: border-color 0.3s ease-in-out;
+
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #6f9dfa;
+}
+
 #navbar {
     list-style-type: none;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
+    position: fixed;
+    top: 0;
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -113,7 +128,7 @@ header {
     padding: 0.5rem 16px;
 }
 
-#navbar #text {
+#navbar .search {
     padding: 8px 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
@@ -122,10 +137,29 @@ header {
     width: 400px;
 }
 
-#navbar #submit {
+#navbar .sort {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 0.9rem;
+    background-color: #f5f5f5;
+}
+
+#navbar .sort-submit {
     background-color: #f5f5f5;
     color: #333;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 0;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#navbar .search-submit {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
     border-radius: 0 5px 5px 0;
     padding: 8px 12px;
     font-size: 1rem;
@@ -133,7 +167,6 @@ header {
     transition: all 0.3s ease;
 }
 
-#navbar #submit:hover {
+#navbar .search-submit:hover, #navbar .sort-submit:hover {
     background-color: #ddd;
 }
-

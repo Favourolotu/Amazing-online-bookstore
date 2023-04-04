@@ -53,6 +53,11 @@ form {
     color: #fff;
     background-color: #333;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #555;
 }
 
 .container {
@@ -62,10 +67,6 @@ form {
     border-radius: 10px;
     padding: 2rem;
     margin: 2rem;
-}
-
-button[type="submit"]:hover {
-    background-color: #555;
 }
 
 p a {
@@ -107,5 +108,3 @@ footer {
     display: inline-block; /* Display the radio buttons inline */
     margin-right: 0.5rem;
 }
-
-

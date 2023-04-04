@@ -29,6 +29,9 @@ public class HomeController {
         return "search";
     }
 
-
-
+    @GetMapping("/sort")
+    public String sort(@RequestParam String query, Model model) {
+        model.addAttribute("books", bookService.sortBooksByQuery(query));
+        return "home";
+    }
 }

@@ -1,8 +1,15 @@
 package com.example.bookstore.book;
 
+import com.example.bookstore.user.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,8 +21,8 @@ public class Book {
     private String imageUrl;
     private int stock;
 
-    public Book() {
-    }
+    @ManyToMany(mappedBy = "purchasedBooks")
+    private List<User> purchasers;
 
     public Book(String title, String author, String description, String publisher, String imageUrl) {
         this.title = title;
