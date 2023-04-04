@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="Fixed file names.">
+    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="Owner controller tests done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/OwnerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/HomeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/HomeControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,7 @@
       <recent name="C:\Users\Chase\Desktop\School\SYSC 4806\bookstore\src\main\resources\static\styles" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerControllerTest">
+  <component name="RunManager" selected="JUnit.HomeControllerTest">
     <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.bookstore.user.User" />
       <module name="bookstore" />
@@ -94,6 +94,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.bookstore.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.bookstore.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.example.bookstore.controllers.HomeControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,11 +137,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.User" />
+      <item itemvalue="JUnit.HomeControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest" />
       <item itemvalue="Spring Boot.BookstoreApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HomeControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="Application.User" />
       </list>
@@ -148,7 +165,7 @@
       <workItem from="1680538536827" duration="350000" />
       <workItem from="1680625971415" duration="21133000" />
       <workItem from="1680649975526" duration="173000" />
-      <workItem from="1680650160592" duration="579000" />
+      <workItem from="1680650160592" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="publishing the branch.">
       <created>1680539334588</created>
@@ -192,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680648840635</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Owner controller tests done.">
+      <created>1680650789791</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680650789791</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +240,7 @@
     <MESSAGE value="Filter option added.&#10;Option for removing from cart added.&#10;Choosing to add more than one book added.&#10;Styling on cart page added.&#10;Recommendation page added." />
     <MESSAGE value="Testing additions." />
     <MESSAGE value="Fixed file names." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed file names." />
+    <MESSAGE value="Owner controller tests done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Owner controller tests done." />
   </component>
 </project>
