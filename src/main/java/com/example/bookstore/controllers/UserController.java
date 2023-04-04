@@ -1,6 +1,5 @@
 package com.example.bookstore.controllers;
 
-import com.example.bookstore.book.Book;
 import com.example.bookstore.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,10 +23,18 @@ public class UserController {
 
     @PostMapping("/cart")
     @PreAuthorize("#username == authentication.name")
-    public String addToCart(@RequestParam String username, @RequestParam Integer bookISBN) {
-        userService.addToCart(username, bookISBN);
+    public String addToCart(@RequestParam String username, @RequestParam Integer bookISBN, @RequestParam Integer quantity) {
+        userService.addToCart(username, bookISBN, quantity);
         return "redirect:/user/cart?username=" + username;
     }
+
+    @PostMapping("/remove")
+    @PreAuthorize("#username == authentication.name")
+    public String removeFromCart(@RequestParam String username, @RequestParam Integer bookISBN) {
+        userService.removeFromCart(username, bookISBN);
+        return "redirect:/user/cart?username=" + username;
+    }
+
 
     @PostMapping("/checkout")
     @PreAuthorize("#username == authentication.name")
@@ -36,18 +43,12 @@ public class UserController {
         return "redirect:/user/cart?username=" + username;
     }
 
-    //removeFromCart
 
-
-    //---- recommendation stuff will go here
-
-    //viewRecommendations
-
-
-
-
-
-
-
+    @GetMapping("/recommendations")
+    @PreAuthorize("#username == authentication.name")
+    public String viewRecommendations(@RequestParam String username, Model model) {
+        model.addAttribute("books", userService.getRecommendations(username));
+        return "home";
+    }
 
 }
