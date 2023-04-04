@@ -18,12 +18,18 @@ The application allows bookstore owners to upload and edit book information, suc
 2. Navigate to BookstoreApplication.java and click run
 3. The initial entrypoint of the web application is "/login"
 4. Once Spring has initialized, type in "localhost:8080/login" into a browser
-5. From here, you can access the web application
+5. Enter the credentials to be taken to the homepage
+6. Now you can access the web application
 
-## Future Improvements
-- Adding CSS styling to the views
-- Adding book images to book entities
-- Book recommendations based on Jaccard distancing
+## Default Credentials
+The following are the default credentials of the web application
+### Default Owner Credential:
+- Username => owner
+- Password => pass
+### Default User Credential:
+- Username => user
+- Password => pass
+#### Note: Credentials could be created through registration
 
 ## This project was worked on by:
 - Chase Scott
