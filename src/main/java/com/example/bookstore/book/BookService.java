@@ -27,6 +27,25 @@ public class BookService {
 
     }
 
+    public Iterable<Book> sortBooksByQuery(String query) {
+        switch (query) {
+            case "title" -> {
+                return this.bookRepository.findAllByOrderByTitleAsc();
+            }
+            case "author" -> {
+                return this.bookRepository.findAllByOrderByAuthorAsc();
+            }
+            case "publisher" -> {
+                return this.bookRepository.findAllByOrderByPublisherAsc();
+            }
+            case "stock" -> {
+                return this.bookRepository.findAllByOrderByStockAsc();
+            }
+        }
+        // somehow invalid sort param passed
+        return null;
+    }
+
     public void addNewBook(Book book) {
         bookRepository.save(book);
     }
