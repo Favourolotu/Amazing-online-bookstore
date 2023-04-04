@@ -22,9 +22,28 @@ public class BookService {
                 .orElseThrow(() -> new RuntimeException("Error finding book with ISBN: " + ISBN));
     }
 
-    public Iterable<Book> getBookByQuery(String query) {
+    public Iterable<Book> getBooksByQuery(String query) {
         return this.bookRepository.search(query);
 
+    }
+
+    public Iterable<Book> sortBooksByQuery(String query) {
+        switch (query) {
+            case "title" -> {
+                return this.bookRepository.findAllByOrderByTitleAsc();
+            }
+            case "author" -> {
+                return this.bookRepository.findAllByOrderByAuthorAsc();
+            }
+            case "publisher" -> {
+                return this.bookRepository.findAllByOrderByPublisherAsc();
+            }
+            case "stock" -> {
+                return this.bookRepository.findAllByOrderByStockAsc();
+            }
+        }
+        // somehow invalid sort param passed
+        return null;
     }
 
     public void addNewBook(Book book) {

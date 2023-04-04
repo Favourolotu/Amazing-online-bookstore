@@ -2,36 +2,47 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Shopping Cart</title>
+    <link rel="stylesheet" th:href="@{/css/cart.css}">
 </head>
 <body>
+
 <h1>Shopping Cart</h1>
-
-<p th:text = "${cart.user.username}"></p>
-
-
 
 <table>
     <thead>
     <tr>
-        <th>Title</th>
+        <th style="text-align: left;" colspan="2">Item</th>
         <th>Quantity</th>
+        <th>Remove</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="book : ${cart.items.entrySet()}">
-        <td th:text="${book.key.title}"></td>
+        <td><img th:src="${book.key.imageUrl}" /></td>
+        <td>
+            <div><span th:text="${book.key.title}" style="font-weight: bold;"></span></div>
+            <div><span th:text="${book.key.author}"></span> - <span th:text="${book.key.publisher}"></span></div>
+        </td>
         <td th:text="${book.value}"></td>
+        <td>
+            <form th:method="POST" th:action="@{/user/remove}">
+                <input type="hidden" name="username" th:value="${#authentication.getName()}">
+                <input type="hidden" name="bookISBN" th:value="${book.key.ISBN}">
+                <button class="remove-button" type="submit">X</button>
+            </form>
+        </td>
     </tr>
     </tbody>
 </table>
 
-<form th:method="POST" th:action="@{/user/checkout}">
-    <input type="hidden" name="username" th:value="${#authentication.getName()}">
+<div style="text-align: right; margin: 2rem 25%;">
+    <a class="button" th:href="@{/home}">Continue Shopping</a>
 
-    <button type="submit" class="button">Checkout</button>
-</form>
-
-<a th:href="@{/home}">Return to home page</a>
+    <form style="display: inline-block" th:method="POST" th:action="@{/user/checkout}">
+        <input type="hidden" name="username" th:value="${#authentication.getName()}">
+        <button type="submit" class="button">Checkout</button>
+    </form>
+</div>
 
 </body>
 </html>
