@@ -17,5 +17,4 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 
     Iterable<Book> findAllByOrderByStockAsc();
 
-
 }

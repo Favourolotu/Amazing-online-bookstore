@@ -22,7 +22,7 @@ public class BookService {
                 .orElseThrow(() -> new RuntimeException("Error finding book with ISBN: " + ISBN));
     }
 
-    public Iterable<Book> getBookByQuery(String query) {
+    public Iterable<Book> getBooksByQuery(String query) {
         return this.bookRepository.search(query);
 
     }
