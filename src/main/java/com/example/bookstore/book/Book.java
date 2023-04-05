@@ -88,4 +88,12 @@ public class Book {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    public List<User> getPurchasers() {
+        return purchasers;
+    }
+
+    public void setPurchasers(List<User> purchasers) {
+        this.purchasers = purchasers;
+    }
 }
