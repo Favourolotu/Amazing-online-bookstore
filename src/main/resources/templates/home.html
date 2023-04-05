@@ -52,7 +52,7 @@
         <p th:text="'In Stock: ' + ${book.stock}"></p>
 
         <th:block th:if="${book.stock >= 1}">
-          <form style="display: inline-block" th:method="POST" th:action="@{/user/cart}">
+          <form style="display: inline-block" th:method="POST" th:action="@{/user/add}">
             <input type="hidden" name="username" th:value="${#authentication.getName()}">
             <input type="hidden" name="bookISBN" th:value="${book.ISBN}">
             <input type="number" id="quantity" name="quantity" min="1" th:max="${book.stock}" value="1" style="width: 32px">

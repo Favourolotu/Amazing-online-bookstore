@@ -21,7 +21,7 @@ public class UserController {
         return "cart";
     }
 
-    @PostMapping("/cart")
+    @PostMapping("/add")
     @PreAuthorize("#username == authentication.name")
     public String addToCart(@RequestParam String username, @RequestParam Integer bookISBN, @RequestParam Integer quantity) {
         userService.addToCart(username, bookISBN, quantity);

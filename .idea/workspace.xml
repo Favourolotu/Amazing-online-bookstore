@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="Owner controller tests done.">
+    <list default="true" id="b10a0105-9b53-4f26-ae03-8ffb45772171" name="Changes" comment="Home controller tests done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/HomeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/HomeControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bookstore/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bookstore/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/bookstore/controllers/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,7 @@
       <recent name="C:\Users\Chase\Desktop\School\SYSC 4806\bookstore\src\main\resources\static\styles" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HomeControllerTest">
+  <component name="RunManager" selected="JUnit.UserControllerTest">
     <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.bookstore.user.User" />
       <module name="bookstore" />
@@ -128,6 +130,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.bookstore.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.bookstore.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.example.bookstore.controllers.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="bookstore" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.bookstore.BookstoreApplication" />
@@ -138,11 +155,13 @@
     <list>
       <item itemvalue="Application.User" />
       <item itemvalue="JUnit.HomeControllerTest" />
+      <item itemvalue="JUnit.UserControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest" />
       <item itemvalue="Spring Boot.BookstoreApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.HomeControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="Application.User" />
@@ -165,7 +184,7 @@
       <workItem from="1680538536827" duration="350000" />
       <workItem from="1680625971415" duration="21133000" />
       <workItem from="1680649975526" duration="173000" />
-      <workItem from="1680650160592" duration="1284000" />
+      <workItem from="1680650160592" duration="2967000" />
     </task>
     <task id="LOCAL-00001" summary="publishing the branch.">
       <created>1680539334588</created>
@@ -216,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680650789791</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Home controller tests done.">
+      <created>1680651475281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680651475281</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +267,7 @@
     <MESSAGE value="Testing additions." />
     <MESSAGE value="Fixed file names." />
     <MESSAGE value="Owner controller tests done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Owner controller tests done." />
+    <MESSAGE value="Home controller tests done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Home controller tests done." />
   </component>
 </project>
